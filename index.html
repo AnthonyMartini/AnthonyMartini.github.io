@@ -19,24 +19,12 @@
         </div>
         <div class = "menuBar" id = "header">
             <ul>
-                <li><a>Home</a></li>
-                <li><a>Background</a></li>
-                <li><a>Skills and Achievements</a></li>
-                <li><a>Activities</a></li>
+                <li><a onClick = "Home()">Home</a></li>
+                <li><a onClick = "Background()">Background</a></li>
+                <li><a onClick = "Skills()">Skills and Achievements</a></li>
+                <li><a onClick = "Activities()">Activities</a></li>
                 
-                <li id = "Skills">
-                    
-                    <a>Skills</a>
-                    <div class = "dropdownContent">
-                        <ul>
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                        
-                        </ul>
-                        
-                    </div>
                 
-                </li>
             </ul>
         </div>
         <div class = "container" id = "AboutDiv">
@@ -256,6 +244,13 @@
         
         
         <div class = "footer">
+            <div class = "footercol">
+                <h2><u>Contact Info</u></h2>
+                <h4>Email: anthonycm2022@gmail.com</h4>
+            </div>
+            <div class = "footercol">
+                <h2><u>Social</u></h2>
+            </div>
         
         
         </div>
@@ -264,6 +259,44 @@
         <script>
             // When the user scrolls down 50px from the top of the document, resize the header's font size
             window.onscroll = function() {scrollFunction()};
+            
+            function Home(){
+                const vh = window.innerHeight;
+                console.log(vh)
+                window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: 'smooth'
+                });
+            }
+            function Background(){
+                const vh = window.innerHeight;
+                console.log(vh)
+                window.scrollTo({
+                  top: (vh) - 358,
+                  left: 0,
+                  behavior: 'smooth'
+                });
+            }
+            
+            function Skills(){
+                const vh = window.innerHeight;
+                console.log(vh)
+                window.scrollTo({
+                  top: (vh) + 442,
+                  left: 0,
+                  behavior: 'smooth'
+                });
+            }
+            function Activities(){
+                const vh = window.innerHeight;
+                console.log(vh)
+                window.scrollTo({
+                  top: (vh) + 1242,
+                  left: 0,
+                  behavior: 'smooth'
+                });
+            }
 
             function scrollFunction() {
               if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {

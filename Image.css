@@ -1,22 +1,33 @@
 .cincinnati{
     width:100%;
-    height: calc(100% - 356px);
+    height: calc(100vh - 358px);
     display:flex;
     flex: row wrap;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(15deg,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1)),url(Cincinnati.jpeg);
+    background-image: linear-gradient(15deg,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1)),url(img/Cincinnati.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     
 }
 
-.programming{
+.image{
     width:100%;
-    background-image:linear-gradient(15deg,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1)),url(programming.jpeg);
+   
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     
+}
+.programming{
+    background-image:linear-gradient(15deg,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1)),url(img/programming.jpeg);
+}
+
+.electronics{
+    background-image:linear-gradient(15deg,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1)),url(img/electronics.jpeg);
+}
+
+.printing{
+    background-image:linear-gradient(15deg,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 1)),url(img/printing.jpeg);
 }
