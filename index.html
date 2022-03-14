@@ -1,0 +1,339 @@
+<html>
+    <head>
+        <title>Anthony Martini</title>
+        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "mediaQueries.css">
+        <link rel="icon" href="imgs/WebIcon.jpeg">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="library.js" defer></script>
+    </head>
+    <!-- Home -->
+    <body>
+        <div class = "invis" id = "One"></div>
+        <div class = "Cincinnati">
+            <div class = "title"> 
+                <h1>Anthony Martini</h1>
+                <p>Computer Engineering Student at the University of Cincinnati</p>
+                <p>Tech Intern at Procter and Gamble</p>
+            </div>
+            
+            
+            
+        
+        </div>
+        
+        <!-- Menu Bar -->
+        <div class = "MenuBar" id = "menuBar">
+            <ul>
+                
+                <li onClick = "ScrollTo('One')"><b><a>Home</a></b></li>
+                <li onClick = "ScrollTo('Two')"><b><a>Résumé</a></b></li>
+                <li onClick = "ScrollTo('Three')"><b><a>Projects</a></b></li>
+                <li onClick = "ScrollTo('Four')"><b><a>Achievements</a></b></li>
+               
+                
+            </ul>
+        
+        
+            </div>
+        
+        <!-- About Me -->
+        
+        <div class = "Block w100 light">
+            <div class = "contentBlock aboutMe light">
+            
+                <div class = "w100">
+                    <h1 style = "text-align: center;"> About Me</h1>
+                </div>
+                <div class = "w50">
+                    <img style = "border-radius: 50%;" src = "imgs/WithKaiser.JPG" class = "w60">
+                </div>
+                <div class = "w50">
+                    <h3>&nbsp&nbsp&nbsp&nbsp My name is Anthony Martini, I am currently a Computer Engineering Student at the University of Cincinnati. I am also a technology intern at Procter & Gamble, building solutions with Microsoft's Power Platform. In my freetime, I like to code and create electronics projects.</h3>
+                </div>
+                <div class = "w100">
+                    <h1>Feel Free to Contact Me:</h1>
+                </div>
+                <div id = "linkBox">
+                    <h1><a id = "link" target="_blank" href = "mailto:anthonycm2022@gmail.com">Email</a></h1>
+                    <h1><a id = "link" target="_blank" href = "https://www.linkedin.com/in/anthony-martini-5395411b3/">LinkedIn</a></h1>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class = "Block w100 dark" id = "Two">
+            <div class = "contentBlock Resume dark">
+                <div class = "w100">
+                    <h1 style = "padding-top:20px;text-align: center;">Résumé</h1>
+                </div>
+                <div class = "w100 Education">
+                    <h2 style = "margin-top:20px;">Education</h2>
+                    <div class = "verticalLine"></div>
+                    
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>Taylor High School</h2>
+                            <p>Ranked #2 in class, 4.833 GPA</p>
+                            <p>Aug 2018 - Present</p>
+                        
+                        </div>
+                        
+                        <div class = "w50">
+                            <p><b>Notable Courses:</b></p>
+                            <ul>
+                                <li>Database Management</li>
+                                <li>Intro to Web Development</li>
+                                <li>Computer Programming</li>
+                            </ul>
+                        
+                        </div>
+                        <div class = "Tags w100">
+                            <p>HTML</p>
+                            <p>CSS</p>
+                            <p>SQL</p>
+                            <p>Python</p>
+                            <p>Math</p>
+                        </div>
+  
+                    </div>
+                    
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>Cincinnati State</h2>
+                            <p>Enrolled as a College-Credit-Plus Student</p>
+                            <p>Aug 2020 - May 2021</p>
+                        
+                        </div>
+                        
+                        <div class = "w50">
+                            <p><b>Notable Courses:</b></p>
+                            <ul>
+                                <li>Calculus 1 & 2</li>
+                                <li>Intro Into Effective Speaking</li>
+                            </ul>
+                        
+                        </div>
+                        <div class = "Tags w100">
+                            
+                            <p>Math</p>
+                            <p>Communications</p>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>University of Cincinnati</h2>
+                            <p>Enrolled as a College-Credit-Plus Student</p>
+                            <p>Aug 2021 - Present</p>
+                        
+                        </div>
+                        
+                        <div class = "w50">
+                            <p><b>Notable Courses:</b></p>
+                            <ul>
+                                <li>Intro to Python and R</li>
+                                <li>Programming for EECE</li>
+                                <li>Foundations of Engineer Design Thinking 1 & 2</li>
+                                <li>Multi-variable Calculus</li>
+                                <li>Linear Algebra</li>
+                            </ul>
+                        
+                        </div>
+                        <div class = "Tags w100">
+                            <p>Python</p>
+                            <p>R</p>
+                            <p>C++</p>
+                            <p>Labview</p>
+                            <p>Matlab</p>
+                            <p>VBA</p>
+                        </div>
+                        
+                        
+                    </div>
+                
+                </div>
+                
+                
+                <div class = "w100 Work">
+                    <h2 style = "margin-top:20px;">Work Experience</h2>
+                    <div class = "verticalLine"></div>
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>Technology Intern</h2>
+                            <p>Procter & Gamble</p>
+                            <p>Jun 2021 - Present</p>
+                        
+                        </div>
+                        
+                        <div class = "w50">
+                            <p><b>Description:</b><br>Applied through InterAlliance and selected by P&G to work in Brand Services. Developed an eCommerce Allocation App on Microsoft’s Power Platform.</p>
+                        
+                        </div>
+                        <div class = "Tags w100">
+                            <p>Microsoft Power Platform</p>
+                            <p>Power Query</p>
+                            <p>Excel</p>
+                            <p>HTML</p>
+                        </div>
+  
+                    </div>
+                    
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>Math Tutor</h2>
+                            <p>Taylor High School</p>
+                            <p>Nov 2018 - March 2020</p>
+                        
+                        </div>
+                        
+                        <div class = "w50">
+                            <p><b>Description:</b><br>Facilitated and helped kids who participated in Math Counts, a school math team that goes to competitions.</p>
+                        
+                        </div>
+                        <div class = "Tags w100">
+                            <p>Math</p>
+                            <p>Communications</p>
+                        </div>
+  
+                    </div>
+                </div>
+                
+            
+            </div>
+        
+        
+        
+        </div>
+        
+        <div class = "Block w100 light" id = "Three">
+
+                <div class = "contentBlock light">
+                    <div class = "w100">
+                        <h1 style = "padding-top:20px;text-align: center;">Featured Projects</h1>
+                        <div class = "verticalLine w100"></div>
+                        
+                        <div class = "Projects w100">
+                            <div class = "w40">
+                                <h2>Line Jumpr</h2>
+                                <img src = "imgs/LineJumpr.jpeg" class = "w100">
+                                <p>Simple endless arcade game. First App I published to the IOS App Store.</p>
+                            
+                                <div class = "Tags">
+                                    <p>Swift</p>
+                                    <p>OOP</p>
+                                </div>
+                            </div>
+                            <div class = "w40">
+                                <h2>RFID Garage Opener</h2>
+                                <img src = "imgs/GarageOpener.jpeg" class = "w100">
+                                <p>WIP at the moment. Circuits board, code, and 3d-printed enclosure all designed by me.</p>
+                            
+                                <div class = "Tags">
+                                    <p>Arduino</p>
+                                    <p>C</p>
+                                    <p>RFID</p>
+                                    <p>3D-Design</p>
+                                </div>
+                            </div>
+                            <div class = "w40">
+                                <h2>Space Streak</h2>
+                                <img src = "imgs/SpaceStreak.jpeg" class = "w100">
+                                <p>Space-themed Arcade Game, built with Spritekit Framework.Second App that I published to the IOS App Store</p>
+                            
+                                <div class = "Tags">
+                                    <p>Swift</p>
+                                    <p>OOP</p>
+                                </div>
+                            </div>
+                            <div class = "w40">
+                                <h2>Résumé Website</h2>
+                                <img src = "imgs/ResumeSite.jpeg" class = "w100">
+                                <p>Space-themed Arcade Game. Second App that I published to the IOS App Store</p>
+                            
+                                <div class = "Tags">
+                                    <p>HTML</p>
+                                    <p>CSS</p>
+                                    <p>JS</p>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        
+        
+        <div class = "Block w100 dark" id = "Four">
+
+            <div class = "contentBlock Achievements dark">
+                <div class = "w100">
+                    <h1 style = "padding-top:20px;text-align: center;"> Achievements</h1>
+                    <div class = "verticalLine w100"></div>
+                    
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>National Merit Finalist</h2>
+                            <p>Febuary 14, 2022</p>
+                        </div>
+                        <div class = "w50">
+                            <p>Semi-Finalists are selected by a PSAT cutoff score alone. Finalists are chosen based on their application which includes other test scores, transcripts, recommendations and a personal essay. </p>
+                        </div>
+                        <div class = "tags w100">
+                            <p>Scholarly</p>
+                            <p>STEM</p>
+                        </div>
+                    </div>
+                     <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>Eagle Scout</h2>
+                            <p>September 21, 2021</p>
+                        </div>
+                        <div class = "w50">
+                            <p>My Eagle Project consisted of documenting the number of veteran graves at the Maple Grove Cemetery as well as marking hard-to-read and unmarked veteran graves in an effort to assist the American Legion in their veteran day services.</p>
+                        </div>
+                         <div class = "tags w100">
+                            <p>Leadership</p>
+                            <p>Community</p>
+                        </div>
+                    </div>
+                    <div class = "card flexrow">
+                        <div class = "w50">
+                            <h2>Power Platform App Maker</h2>
+                            <p>December 30, 2021</p>
+                        </div>
+                        <div class = "w50">
+                            <p>Took and Passed the PL-100 Microsoft Exam. Certified in visualizing, designing, and creating solutions with Microsoft’s Power Platform. </p>
+                        </div>
+                        <div class = "tags w100">
+                            <p>MS Power Platform</p>
+                            <p>Power Query</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class = "Footer">
+            <div>
+                <p>Created by Anthony Martini, 2022</p>
+            </div>
+            <div>
+                <p><a target="_blank" href = "mailto:anthonycm2022@gmail.com">Email</a> - <a target="_blank" href = "https://www.linkedin.com/in/anthony-martini-5395411b3/">LinkedIn</a> - <a target="_blank" href = "https://github.com/AnthonyMartini">Github</a></p>
+            </div>
+        
+        </div>
+    
+    
+    
+    
+    </body>
+
+    
+
+</html>
