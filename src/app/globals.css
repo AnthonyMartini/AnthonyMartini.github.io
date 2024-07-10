@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.hoverScale {
+  transition: 0.3s;
+  backface-visibility: hidden;
+}
+
+.hoverScale:hover {
+  transform: translateZ(0);
+  transform: scale(1.01);
+
+
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.header {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(img/USFCampus.jpg);
+}
+.pfp {
+  width:400px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(img/pfp.jpg);
+}
+
+.lightContent{
+  background: rgb(101,127,189);
+background: linear-gradient(54deg, rgba(101,127,189,1) 0%, rgba(169,240,255,1) 100%);
+}
+.darkContent{
+  background: rgb(23,37,80);
+  background: radial-gradient(circle, rgba(23,37,80,1) 0%, rgba(2,32,121,1) 100%);
+}
+
+.projectImage{
+  width:500px;
+  height: 350px;
+  background-size:cover;
+  border-radius: 15px;
+}
+.cardImage{
+  display: block;
+  width:40px;
+  height: 40px;
+  background-size:contain;
+  background-repeat: no-repeat;
+  margin-bottom: 4px;
+}
+.USF{
+  background-image: url(img/USFLogo.png);
+}
+.UC{
+  background-image: url(img/UCLogo.png);
+}
+.CS{
+  width:100px;
+  background-image: url(img/CincinnatiState.png);
+}
+.PG{
+  background-image: url(img/PG.png);
+}
+.IPG{
+  background-image: url(img/IPG.png);
+}
+.BSA{
+  background-image: url(img/BSA.png);
+}
+.NM{
+  background-image: url(img/National\ Merit\ Logo.png);
+}
+
+
+.garageOpener {
+  background-image: url(img/GarageOpener.jpeg);
+}
+.lineJumpr {
+  background-image: url(img/LineJumpr.jpeg);
+}
+.workoutMonkey {
+  background-image: url(img/WorkoutMonkey.png);
+}
+.LinkedIn {
+  width:40px;
+  height: 40px;
+  background-size:cover;
+  background-image: url(img/li.png);
+}
+
+.menuBar{
+
+  transition:10s;
+  transition:all;
+  top:0;
+  z-index: 100;
+
+}
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
