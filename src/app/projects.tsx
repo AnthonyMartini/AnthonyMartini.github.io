@@ -51,8 +51,8 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               rel="noopener noreferrer"
             />
             <p className="pt-2">
-              Created IOS game using Apple's language, Swift, and IDE, Xcode.
-              Recieved over 300 downloads in lifetime.
+              Created IOS game using Apple&apos;s language, Swift, and IDE,
+              Xcode. Recieved over 300 downloads in lifetime.
             </p>
             <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
               <Tag value="Swift" />
@@ -87,4 +87,5 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
     </div>
   );
 });
+Projects.displayName = "Projects";
 export default Projects;

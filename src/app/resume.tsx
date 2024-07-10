@@ -16,7 +16,9 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="flex w-full flex-row flex-wrap">
           <div className=" flex-1 pl-2">
             <p>Computer Engineering, BSCE</p>
-            <p>Minor in Mathematics, Honors College, Dean's List Recipient</p>
+            <p>
+              Minor in Mathematics, Honors College, Dean&apos;s List Recipient
+            </p>
             <p>
               <i>Aug 2022 - May 2026</i>
             </p>
@@ -225,4 +227,5 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
     </div>
   );
 });
+Resume.displayName = "Resume";
 export default Resume;

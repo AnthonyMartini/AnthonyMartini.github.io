@@ -59,4 +59,5 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
     </div>
   );
 });
+Achievements.displayName = "Achievements";
 export default Achievements;
