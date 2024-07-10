@@ -1,8 +1,7 @@
 "use client";
-import { Button } from "@radix-ui/themes";
 import { Card, Tag } from "./card";
 
-import { forwardRef, LegacyRef, useEffect, useRef } from "react";
+import { forwardRef, LegacyRef } from "react";
 
 const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   return (
