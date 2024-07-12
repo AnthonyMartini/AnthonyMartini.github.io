@@ -6,7 +6,7 @@ import { forwardRef, LegacyRef } from "react";
 const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   return (
     <div
-      className="bg-blue-950 p-4 font-serif flex flex-col items-center pt-[40px]"
+      className="bg-blue-950 p-4 font-serif flex flex-col items-center pt-[40px] text-black"
       ref={ref}
     >
       <h1 className="text-blue-300 font-bold text-[28px]">Achievments</h1>
@@ -14,7 +14,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
 
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="BSA">Eagle Scout</Card.Heading>
-        <div className="flex w-full flex-row flex-wrap text-black">
+        <div className="flex w-full flex-row flex-wrap ">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <p>
               <i>Sep 21, 2021</i>
