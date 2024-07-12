@@ -14,7 +14,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="USF">University of South Florida</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Computer Engineering, BSCE</p>
             <p>
               Minor in Mathematics, Honors College, Dean&apos;s List Recipient
@@ -23,7 +23,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               <i>Aug 2022 - May 2026</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Notable Courses:</h2>
 
             <ul className="list-disc pl-6 columns-2">
@@ -33,7 +33,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               <li>Computer Architecture</li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="C++" />
             <Tag value="Data Structures" />
             <Tag value="Algorithms" />
@@ -45,13 +45,13 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="UC">University of Cincinnati</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Enrolled as a College-Credit-Plus Student</p>
             <p>
               <i>Aug 2021 - May 2022</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Notable Courses:</h2>
             <ul className="list-disc pl-6 columns-2">
               <li>Foundations of Engineering</li>
@@ -60,7 +60,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               <li>Linear Algebra</li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="Python" />
             <Tag value="R" />
             <Tag value="Project Management" />
@@ -71,20 +71,20 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="CS">Cincinnati State</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Enrolled as a College-Credit-Plus Student</p>
             <p>
               <i>Aug 2020 - May 2021</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Notable Courses:</h2>
             <ul className="list-disc pl-6 columns-2">
               <li>Calculus 1 & 2</li>
               <li>Public Speaking</li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="Math" />
             <Tag value="Communications" />
           </div>
@@ -97,14 +97,14 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="PG">Software Engineering Intern</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
             <p>Cincinnati, OH</p>
             <p>
               <i>May 2024 - Present</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Description:</h2>
             <ul className="list-disc pl-6">
               <li>
@@ -118,7 +118,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               </li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="React" />
             <Tag value="Tailwind" />
             <Tag value="Typescript" />
@@ -133,14 +133,14 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
           Power Platform Developer Intern
         </Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Intertape Polymer Group</p>
             <p>Sarasota, Fl</p>
             <p>
               <i>Nov 2023 - May 2024</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Description:</h2>
             <ul className="list-disc pl-6">
               <li>
@@ -150,7 +150,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               </li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="Microsoft Power Platform" />
             <Tag value="HTTP Requests" />
             <Tag value="Project Management" />
@@ -160,14 +160,14 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="PG">Software Engineering Intern</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
             <p>Cincinnati, OH</p>
             <p>
               <i>May 2023 - Aug 2023</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Description:</h2>
             <ul className="list-disc pl-6">
               <li>
@@ -185,7 +185,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               </li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap ">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap ">
             <Tag value="Microsoft Power Platform" />
             <Tag value="Project Management" />
             <Tag value="Python" />
@@ -195,14 +195,14 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="PG">Technology Intern</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
             <p>Cincinnati, OH</p>
             <p>
               <i>Jun 2021- May 2023</i>
             </p>
           </div>
-          <div className=" flex-1 pl-2 ">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <h2 className="font-semibold">Description:</h2>
             <ul className="list-disc pl-6">
               <li>
@@ -216,7 +216,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               </li>
             </ul>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="Microsoft Power Platform" />
             <Tag value="Power Query" />
             <Tag value="Excel" />

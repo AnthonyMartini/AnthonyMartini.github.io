@@ -15,7 +15,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="BSA">Eagle Scout</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <p>
               <i>Sep 21, 2021</i>
             </p>
@@ -27,7 +27,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               American Legion in their veteran day services.
             </p>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="Leadership" />
             <Tag value="Community" />
             <Tag value="Project Planning" />
@@ -37,7 +37,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="NM">National Merit Finalist</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
-          <div className=" flex-1 pl-2">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <p>
               <i>Feb 14, 2022</i>
             </p>
@@ -49,7 +49,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
               essay.
             </p>
           </div>
-          <div className="w-full mt-2 flex flex-row space-x-2">
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="STEM" />
             <Tag value="Scholarship" />
           </div>

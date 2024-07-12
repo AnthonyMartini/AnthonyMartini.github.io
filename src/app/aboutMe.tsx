@@ -5,8 +5,20 @@ import { forwardRef, LegacyRef, useEffect, useState } from "react";
 const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   const [width, setWidth] = useState(200);
   const [latch, setLatch] = useState(false);
+  const [responsive, setResponsive] = useState(true);
+
+  const setWindowDimensions = () => {
+    setResponsive(window.screen.width >= 1000);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", setWindowDimensions);
+    return () => {
+      window.removeEventListener("resize", setWindowDimensions);
+    };
+  }, []);
 
   useEffect(() => {
+    setResponsive(window.screen.width >= 1000);
     const onScroll = () => {
       if (window.scrollY <= 300) {
         console.log(latch ? "true" : "false");
@@ -32,14 +44,18 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
     >
       <h1 className="text-blue-950 text-[28px] font-bold ">About Me</h1>
       <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg mt-1"></div>
-      <div className="flex flex-row pt-10 w-[85%]">
+      <div className="flex flex-row pt-10 w-[85%] flex-wrap">
         <div className="flex-1 flex justify-center">
           <div
-            style={{ width: `${latch ? 420 : width}px` }}
-            className={`bg-black h-[320px] pfp rounded-[160px] rounded-tl-[50px] rounded-br-[50px] transition-all `}
+            style={{
+              width: `${
+                responsive ? `${latch ? 420 : width}px` : "calc(85vw - 32px)"
+              }`,
+            }}
+            className={`bg-black h-[320px] pfp rounded-[160px] rounded-tl-[50px] rounded-br-[50px] transition-all`}
           ></div>
         </div>
-        <div className="flex-1 flex flex-col space-y-4 text-[16px] justify-center">
+        <div className="flex-1 flex flex-col space-y-4 text-[16px] justify-center p-4">
           <span>
             Experienced in full stack development using tools such as{" "}
             <BB>React</BB>, <BB>Tailwind</BB>, <BB>MongoDB</BB>,{" "}

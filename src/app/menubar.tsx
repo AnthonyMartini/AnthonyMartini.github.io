@@ -43,7 +43,7 @@ export default function MenuBar({ items }: MenuBarProps) {
         {items.map((item) => (
           <div
             key={item.name}
-            className=" hover:text-[#ff722c] px-4 h-full content-center cursor-pointer"
+            className=" hover:text-[#ff722c] px-2 h-full content-center cursor-pointer text-[13px] sm:text-[14px] overflow-hidden"
             onClick={() =>
               item.object!.scrollIntoView({
                 behavior: "smooth",

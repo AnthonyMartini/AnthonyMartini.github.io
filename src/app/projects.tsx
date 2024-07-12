@@ -12,16 +12,16 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
         Featured Projects
       </h1>
       <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg mt-1"></div>
-
+      width:500px; height: 350px;
       <div className="w-full flex flex-row flex-wrap justify-center gap-4">
-        <Card.Root className="max-w-[500px]">
+        <Card.Root className="w-full md:w-[550px]">
           <Card.Heading className="text-center">
             RFID Garage Door Opener
           </Card.Heading>
           <div className="flex w-full flex-row flex-wrap justify-center">
             <a
               title="Garage Opener External Link"
-              className="garageOpener projectImage"
+              className="garageOpener projectImage w-[100%] h-[250px]  sm:w-[500px] sm:h-[350px]"
               href="https://github.com/AnthonyMartini/RFIDGarageOpener"
               target="_blank"
               rel="noopener noreferrer"
@@ -31,7 +31,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               enclosure. Written in C++ and utilizes linked lists to dynamically
               store cards.
             </p>
-            <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap ">
+            <div className="w-full mt-2 flex flex-row gap-2 flex-wrap ">
               <Tag value="Arduino" />
               <Tag value="C++" />
               <Tag value="RFID" />
@@ -40,12 +40,13 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
             </div>
           </div>
         </Card.Root>
-        <Card.Root className="w-[35%]">
+
+        <Card.Root className="w-full md:w-[550px]">
           <Card.Heading className="text-center">Line Jumpr</Card.Heading>
-          <div className="flex w-full flex-row flex-wrap">
+          <div className="flex w-full flex-row flex-wrap justify-center">
             <a
               title="Line Jumpr External Link"
-              className="lineJumpr projectImage"
+              className="lineJumpr projectImage w-[100%] h-[250px]  md:w-[500px] sm:h-[350px]"
               href="https://github.com/AnthonyMartini/LineJumpr"
               target="_blank"
               rel="noopener noreferrer"
@@ -54,18 +55,18 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               Created IOS game using Apple&apos;s language, Swift, and IDE,
               Xcode. Recieved over 300 downloads in lifetime.
             </p>
-            <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+            <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
               <Tag value="Swift" />
               <Tag value="OOP" />
             </div>
           </div>
         </Card.Root>
-        <Card.Root className="w-[35%]">
+        <Card.Root className="w-full md:w-[550px]">
           <Card.Heading className="text-center">Workout Monkey</Card.Heading>
-          <div className="flex w-full flex-row flex-wrap">
+          <div className="flex w-full flex-row flex-wrap justify-center">
             <a
               title="Workout Monkey External Link"
-              className="workoutMonkey projectImage"
+              className="workoutMonkey projectImage w-[100%] h-[250px]  sm:w-[500px] sm:h-[350px]"
               href="https://anthonymartini.github.io/WorkoutMonkey/"
               target="_blank"
               rel="noopener noreferrer"
@@ -74,7 +75,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               In-Progress developing fitness tracker app to help users track
               muscle groups hit by their workout and train optimally.
             </p>
-            <div className="w-full mt-2 flex flex-row space-x-2 flex-wrap">
+            <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
               <Tag value="React" />
               <Tag value="Tailwind" />
               <Tag value="Next.JS" />

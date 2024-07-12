@@ -35,13 +35,13 @@ const Card = {
       <div className="flex flex-row flex-wrap">
         <p
           className={cn(
-            "font-bold text-[22px] flex-1 text-slate-900",
+            "font-bold text-[18px] sm:text-[22px] flex-1 text-slate-900",
             className
           )}
         >
           {children}
         </p>
-        <div className={`${logoClass} cardImage`} />
+        <div className={`${logoClass} cardImage hidden sm:block`} />
         <div className="w-full h-[3px] bg-slate-700 mb-2 rounded-[3px]"></div>
       </div>
     );
