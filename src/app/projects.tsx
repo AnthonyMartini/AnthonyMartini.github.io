@@ -12,13 +12,12 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
         Featured Projects
       </h1>
       <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg mt-1"></div>
-      width:500px; height: 350px;
-      <div className="w-full flex flex-row flex-wrap justify-center gap-4">
+      <div className="w-full flex flex-row flex-wrap justify-center gap-4 text-black">
         <Card.Root className="w-full md:w-[550px]">
           <Card.Heading className="text-center">
             RFID Garage Door Opener
           </Card.Heading>
-          <div className="flex w-full flex-row flex-wrap justify-center">
+          <div className="flex w-full flex-row flex-wrap justify-center ">
             <a
               title="Garage Opener External Link"
               className="garageOpener projectImage w-[100%] h-[250px]  sm:w-[500px] sm:h-[350px]"

@@ -14,7 +14,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
 
       <Card.Root className="w-[85%]">
         <Card.Heading logoClass="BSA">Eagle Scout</Card.Heading>
-        <div className="flex w-full flex-row flex-wrap">
+        <div className="flex w-full flex-row flex-wrap text-black">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
             <p>
               <i>Sep 21, 2021</i>

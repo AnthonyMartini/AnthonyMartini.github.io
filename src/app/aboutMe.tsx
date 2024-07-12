@@ -55,7 +55,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             className={`bg-black h-[320px] pfp rounded-[160px] rounded-tl-[50px] rounded-br-[50px] transition-all`}
           ></div>
         </div>
-        <div className="flex-1 flex flex-col space-y-4 text-[16px] justify-center p-4">
+        <div className="flex-1 flex flex-col space-y-4 text-[16px] justify-center p-4 text-blue-950">
           <span>
             Experienced in full stack development using tools such as{" "}
             <BB>React</BB>, <BB>Tailwind</BB>, <BB>MongoDB</BB>,{" "}
