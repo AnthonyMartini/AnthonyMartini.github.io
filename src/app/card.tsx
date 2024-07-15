@@ -32,7 +32,7 @@ const Card = {
 
   Heading: function Heading({ children, className, logoClass }: IProps) {
     return (
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap items-center">
         <p
           className={cn(
             "font-bold text-[18px] sm:text-[22px] flex-1 text-slate-900",
