@@ -27,6 +27,8 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             <h2 className="font-semibold">Notable Courses:</h2>
 
             <ul className="list-disc pl-6 columns-2">
+              <li>Natural Language Processing</li>
+              <li>CMOS Design</li>
               <li>Data Structures</li>
               <li>Analysis of Algorithms</li>
               <li>Introduction to Graph Theory</li>
@@ -35,6 +37,8 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
           </div>
           <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
             <Tag value="C++" />
+            <Tag value="Python" />
+            <Tag value="NLP" />
             <Tag value="Data Structures" />
             <Tag value="Algorithms" />
             <Tag value="Risc-V" />
@@ -95,13 +99,42 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       </h1>
       <div className="bg-blue-300 h-[3px] w-[85%] rounded-lg mt-1"></div>
       <Card.Root className="w-[85%]">
+        <Card.Heading logoClass="IPG">
+          Power Platform Developer Intern
+        </Card.Heading>
+        <div className="flex w-full flex-row flex-wrap">
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2">
+            <p>Intertape Polymer Group</p>
+            <p>Sarasota, Fl</p>
+            <p>
+              <i>Aug 2024 - Present</i>
+            </p>
+          </div>
+          <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
+            <h2 className="font-semibold">Description:</h2>
+            <ul className="list-disc pl-6">
+              <li>
+                Collaborate with business professionals to design, build, and
+                deploy applications, workflows, and automation tools that
+                streamline business processes and enhance productivity.
+              </li>
+            </ul>
+          </div>
+          <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
+            <Tag value="Microsoft Power Platform" />
+            <Tag value="HTTP Requests" />
+            <Tag value="Project Management" />
+          </div>
+        </div>
+      </Card.Root>
+      <Card.Root className="w-[85%]">
         <Card.Heading logoClass="PG">Software Engineering Intern</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
             <p>Cincinnati, OH</p>
             <p>
-              <i>May 2024 - Present</i>
+              <i>May 2024 - Aug 2024</i>
             </p>
           </div>
           <div className=" flex-1 pl-2 min-w-[250px] pb-2 ">
@@ -144,9 +177,8 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             <h2 className="font-semibold">Description:</h2>
             <ul className="list-disc pl-6">
               <li>
-                Collaborate with business professionals to design, build, and
-                deploy applications, workflows, and automation tools that
-                streamline business processes and enhance productivity.
+                Created multiple apps and flows in Microsoft's Power Platform,
+                mirgrating applications from outdated software.
               </li>
             </ul>
           </div>

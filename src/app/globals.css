@@ -52,11 +52,11 @@ html{
 
 .lightContent{
   background: rgb(101,127,189);
-background: linear-gradient(54deg, rgba(101,127,189,1) 0%, rgba(169,240,255,1) 100%);
+background: linear-gradient(54deg, rgb(88, 111, 167) 0%, rgb(106, 217, 239) 100%);
 }
 .darkContent{
   background: rgb(23,37,80);
-  background: radial-gradient(circle, rgba(23,37,80,1) 0%, rgba(2,32,121,1) 100%);
+  background: radial-gradient(circle, rgb(6, 21, 63) 0%, rgb(1, 23, 88) 100%);
 }
 
 .projectImage{
@@ -106,8 +106,8 @@ background: linear-gradient(54deg, rgba(101,127,189,1) 0%, rgba(169,240,255,1) 1
 .lineJumpr {
   background-image: url(img/LineJumpr.jpeg);
 }
-.workoutMonkey {
-  background-image: url(img/WorkoutMonkey.png);
+.profspective {
+  background-image: url(img/Profspective.png);
 }
 .LinkedIn {
   width:40px;

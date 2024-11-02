@@ -61,25 +61,26 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
           </div>
         </Card.Root>
         <Card.Root className="w-full md:w-[550px]">
-          <Card.Heading className="text-center">Workout Monkey</Card.Heading>
+          <Card.Heading className="text-center">Profspective</Card.Heading>
           <div className="flex w-full flex-row flex-wrap justify-center">
             <a
               title="Workout Monkey External Link"
-              className="workoutMonkey projectImage w-[100%] h-[250px]  sm:w-[500px] sm:h-[350px]"
-              href="https://anthonymartini.github.io/WorkoutMonkey/"
+              className="profspective projectImage w-[100%] h-[250px]  sm:w-[500px] sm:h-[350px]"
+              href="https://profspective.info"
               target="_blank"
               rel="noopener noreferrer"
             />
             <p className="pt-2">
-              In-Progress developing fitness tracker app to help users track
-              muscle groups hit by their workout and train optimally.
+              Full stack project that lets students at USF see course grade
+              distributions for previous semesters to help in upcoming course
+              selections.
             </p>
             <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
               <Tag value="React" />
               <Tag value="Tailwind" />
               <Tag value="Next.JS" />
-              <Tag value="MongoDB" />
-              <Tag value="Express" />
+              <Tag value="Azure" />
+              <Tag value="SQL" />
             </div>
           </div>
         </Card.Root>
