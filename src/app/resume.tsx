@@ -177,8 +177,8 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             <h2 className="font-semibold">Description:</h2>
             <ul className="list-disc pl-6">
               <li>
-                Created multiple apps and flows in Microsoft's Power Platform,
-                mirgrating applications from outdated software.
+                Created multiple apps and flows in Microsoft&apos;s Power
+                Platform, mirgrating applications from outdated software.
               </li>
             </ul>
           </div>
