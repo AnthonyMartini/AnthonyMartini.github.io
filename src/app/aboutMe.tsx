@@ -39,11 +39,13 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   }
   return (
     <div
-      className="bg-blue-200 p-4 font-serif flex flex-col items-center pt-[40px]"
+      className="bg-blue-200 p-4 font-serif flex flex-col items-center pt-[20px]"
       ref={ref}
     >
-      <h1 className="text-blue-950 text-[28px] font-bold ">About Me</h1>
-      <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg mt-1"></div>
+      <h1 className="text-blue-950 text-[45px] font-TerminalGrotesque">
+        About Me
+      </h1>
+      <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg"></div>
       <div className="flex flex-row pt-10 w-[85%] flex-wrap">
         <div className="flex-1 flex justify-center">
           <div
@@ -58,8 +60,8 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="flex-1 flex flex-col space-y-4 text-[16px] justify-center p-4 text-blue-950">
           <span>
             Experienced in full stack development using tools such as{" "}
-            <BB>React</BB>, <BB>Tailwind</BB>, <BB>MongoDB</BB>,{" "}
-            <BB>Express</BB>, and <BB>Next.JS</BB>.
+            <BB>React</BB>, <BB>Tailwind</BB>, <BB>AWS</BB>, <BB>FastAPI</BB>,
+            and <BB>Next.JS</BB>.
           </span>
           <span>
             Strong understanding of computer science concepts like{" "}
@@ -72,7 +74,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
           </span>
           <span>
             Explored personal projects covering <BB>3D design</BB> and{" "}
-            <BB>PCB fabrication</BB>
+            <BB>PCB Sketching</BB>
           </span>
         </div>
       </div>

@@ -5,7 +5,9 @@ const Header = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <div className="header h-[300px] md:h-[450px] p-4" ref={ref}>
       <div className="text-center font-bold text-white">
-        <h1 className="text-[28px]">Anthony Martini</h1>
+        <h1 className="text-[74px] font-TerminalGrotesque font-normal">
+          Anthony Martini
+        </h1>
         <h2 className="text-[16px] font-semibold">
           Computer Engineering Student at the University of South Florida
         </h2>

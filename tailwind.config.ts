@@ -13,8 +13,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+            'TerminalGrotesque': ['TerminalGrotesque', 'sans-serif'], // Match the font-family from your @font-face rule
+          },
     },
   },
+  
   plugins: [],
 };
 export default config;

@@ -15,7 +15,16 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+@font-face {
+  font-family: 'TerminalGrotesque'; /* Choose a name for your font */
+  src: url('./fonts/terminal-grotesque_open.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
+.TerminalGrotesque {
+      font-family: 'TerminalGrotesque' /* Include a fallback font */
+  }
 .hoverScale {
   transition: 0.3s;
   backface-visibility: hidden;
@@ -77,10 +86,6 @@ background: linear-gradient(54deg, rgb(88, 111, 167) 0%, rgb(106, 217, 239) 100%
 }
 .UC{
   background-image: url(img/UCLogo.png);
-}
-.CS{
-  width:100px;
-  background-image: url(img/CincinnatiState.png);
 }
 .JPM{
   width:73px;

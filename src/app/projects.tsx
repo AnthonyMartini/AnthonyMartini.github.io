@@ -5,10 +5,10 @@ import { Card, Tag } from "./card";
 const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <div
-      className="lightContent p-4 font-serif flex flex-col items-center pt-[40px] w-full"
+      className="lightContent p-4 font-serif flex flex-col items-center pt-[20px] w-full"
       ref={ref}
     >
-      <h1 className="text-blue-950 text-[28px] font-bold ">
+      <h1 className="text-blue-950 text-[45px] font-TerminalGrotesque ">
         Featured Projects
       </h1>
       <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg mt-1"></div>
