@@ -46,12 +46,9 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
             CNN Pneumonia Detection
           </Card.Heading>
           <div className="flex w-full flex-row flex-wrap justify-center">
-            <a
+            <div
               title="CNN Pneumonia Detection External Link"
               className="xrays projectImage w-[100%] h-[250px]  md:w-[500px] sm:h-[350px]"
-              href="https://github.com/AnthonyMartini/LineJumpr"
-              target="_blank"
-              rel="noopener noreferrer"
             />
             <p className="pt-2">
               Architected CNN models with convolutional, pooling, and fully
@@ -71,7 +68,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
             <a
               title="Next Step Tracker External Link"
               className="nextStep projectImage w-[100%] h-[250px] sm:w-[500px] sm:h-[350px]"
-              href="https://profspective.info"
+              href="https://github.com/AnthonyMartini/health-dash-fe"
               target="_blank"
               rel="noopener noreferrer"
             />

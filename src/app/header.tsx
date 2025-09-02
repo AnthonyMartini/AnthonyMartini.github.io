@@ -1,5 +1,5 @@
 "use client";
-import React, { ForwardedRef, forwardRef, LegacyRef, Ref } from "react";
+import React, { ForwardedRef, forwardRef } from "react";
 
 const Header = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   return (
