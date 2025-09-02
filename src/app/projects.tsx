@@ -5,13 +5,13 @@ import { Card, Tag } from "./card";
 const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <div
-      className="lightContent p-4 font-serif flex flex-col items-center pt-[20px] w-full"
+      className="bg-gradient-to-b from-gray-300 to-white p-4 font-serif flex flex-col items-center pt-[40px] w-full"
       ref={ref}
     >
-      <h1 className="text-blue-950 text-[45px] font-TerminalGrotesque ">
-        Featured Projects
+      <h1 className="text-black text-[45px] font-TerminalGrotesque ">
+        My Favorite Projects
       </h1>
-      <div className="bg-blue-950 h-[3px] w-[85%] rounded-lg mt-1"></div>
+      <div className="bg-black h-[3px] w-[85%] rounded-lg mt-1"></div>
       <div className="w-full flex flex-row flex-wrap justify-center gap-4 text-black">
         <Card.Root className="w-full md:w-[550px]">
           <Card.Heading className="text-center">
@@ -26,9 +26,10 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               rel="noopener noreferrer"
             />
             <p className="pt-2">
-              Built using Arduino hardware, a custom PCB, and a 3D-printed
-              enclosure. Written in C++ and utilizes linked lists to dynamically
-              store cards.
+              Built an Arduino-based garage door opener configurable with
+              multiple RFID cards, programmed in C code. Sketched a custom PCB,
+              soldered components, and 3D-printed an enclosure to house the
+              system.
             </p>
             <div className="w-full mt-2 flex flex-row gap-2 flex-wrap ">
               <Tag value="Arduino" />
@@ -41,18 +42,22 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
         </Card.Root>
 
         <Card.Root className="w-full md:w-[550px]">
-          <Card.Heading className="text-center">Line Jumpr</Card.Heading>
+          <Card.Heading className="text-center">
+            CNN Pneumonia Detection
+          </Card.Heading>
           <div className="flex w-full flex-row flex-wrap justify-center">
             <a
-              title="Line Jumpr External Link"
-              className="lineJumpr projectImage w-[100%] h-[250px]  md:w-[500px] sm:h-[350px]"
+              title="CNN Pneumonia Detection External Link"
+              className="xrays projectImage w-[100%] h-[250px]  md:w-[500px] sm:h-[350px]"
               href="https://github.com/AnthonyMartini/LineJumpr"
               target="_blank"
               rel="noopener noreferrer"
             />
             <p className="pt-2">
-              Created IOS game using Apple&apos;s language, Swift, and IDE,
-              Xcode. Recieved over 300 downloads in lifetime.
+              Architected CNN models with convolutional, pooling, and fully
+              connected layers for binary classification of pediatric chest
+              X-rays, achieving ~91% accuracy and efficient deployment on both
+              GPU and CPU for clinical and low-resource settings.
             </p>
             <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
               <Tag value="Swift" />
@@ -61,19 +66,21 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
           </div>
         </Card.Root>
         <Card.Root className="w-full md:w-[550px]">
-          <Card.Heading className="text-center">Profspective</Card.Heading>
+          <Card.Heading className="text-center">Next Step Tracker</Card.Heading>
           <div className="flex w-full flex-row flex-wrap justify-center">
             <a
-              title="Workout Monkey External Link"
-              className="profspective projectImage w-[100%] h-[250px]  sm:w-[500px] sm:h-[350px]"
+              title="Next Step Tracker External Link"
+              className="nextStep projectImage w-[100%] h-[250px] sm:w-[500px] sm:h-[350px]"
               href="https://profspective.info"
               target="_blank"
               rel="noopener noreferrer"
             />
             <p className="pt-2">
-              Full stack project that lets students at USF see course grade
-              distributions for previous semesters to help in upcoming course
-              selections.
+              Created a Personal Health Dashboard that allows users to log and
+              visualize health metrics such as exercise, sleep, and diet,
+              promoting healthier habits and personalized wellness tracking.
+              Leveraged just React and AWS Free Tier tools, delivering a
+              cost-effective and scalable solution within a single semester.
             </p>
             <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
               <Tag value="React" />
@@ -85,6 +92,14 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
           </div>
         </Card.Root>
       </div>
+      <a
+        href="https://github.com/AnthonyMartini"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-8 relative -rotate-3 bg-yellow-600 rounded px-3 py-1 shadow italic text-sm inline-block hover:bg-yellow-500 transition"
+      >
+        Check out my github for all my projects!
+      </a>
     </div>
   );
 });

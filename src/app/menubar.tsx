@@ -35,11 +35,11 @@ export default function MenuBar({ items }: MenuBarProps) {
   return (
     <div
       className={cn(
-        "  h-[41px] w-full sticky top-0 mt-[-41px] z-10 bg-[#3068a8]  border-black transition-all duration-1000",
+        "  h-[41px] w-full sticky top-0 mt-[-41px] z-10 bg-[#252525]  border-black transition-all duration-1000 justify-center flex",
         bgClass
       )}
     >
-      <div className=" flex justify-center h-full text-white  text-center">
+      <div className=" flex max-w-[800px] w-full h-full text-white  text-center justify-between">
         {items.map((item) => (
           <div
             key={item.name}

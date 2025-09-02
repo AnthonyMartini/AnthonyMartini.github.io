@@ -1,7 +1,6 @@
 "use client";
 import Header from "./header";
 import MenuBar from "./menubar";
-import { Card, Tag } from "./card";
 import Resume from "./resume";
 import Achievments from "./achievements";
 import AboutMe from "./aboutMe";
@@ -22,16 +21,15 @@ export default function Home() {
   console.log(aboutMeRef.current);
   return (
     <div className="static w-full">
-      <Header />
-
       <MenuBar
         items={[
           { name: "About Me", object: aboutMeRef.current! },
-          { name: "Resume", object: resumeRef.current! },
+          { name: "Résumé", object: resumeRef.current! },
           { name: "Projects", object: projectsRef.current! },
           { name: "Achievements", object: achievmentsRef.current! },
         ]}
       />
+      <Header />
 
       <AboutMe ref={aboutMeRef} />
 

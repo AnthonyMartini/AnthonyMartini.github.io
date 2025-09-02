@@ -8,7 +8,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   }
   return (
     <div
-      className="darkContent p-4 font-serif flex flex-col items-center pt-[20px] text-black"
+      className="darkContent p-4 font-serif flex flex-col items-center pt-[40px] text-black"
       ref={ref}
     >
       <h1 className="text-blue-300  text-[45px] font-TerminalGrotesque">
@@ -83,11 +83,11 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       </h1>
       <div className="bg-blue-300 h-[3px] w-[85%] rounded-lg mt-1"></div>
       <Card.Root className="w-[85%]">
-        <Card.Heading logoClass="IPG">Software Engineering Intern</Card.Heading>
+        <Card.Heading logoClass="PG">Software Engineering Intern</Card.Heading>
         <div className="flex w-full flex-row flex-wrap">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
-            <p>Cincinnati, OH</p>
+            <p>Cincinnati, Ohio</p>
             <p>
               <i>May 2025 - Aug 2025</i>
             </p>
@@ -123,7 +123,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="flex w-full flex-row flex-wrap">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
-            <p>Cincinnati, OH</p>
+            <p>Cincinnati, Ohio</p>
             <p>
               <i>May 2024 - Aug 2024</i>
             </p>
@@ -162,7 +162,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="flex w-full flex-row flex-wrap">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Intertape Polymer Group</p>
-            <p>Sarasota, Fl</p>
+            <p>Sarasota, Florida</p>
             <p>
               <i>Nov 2023 - May 2024</i>
             </p>
@@ -195,7 +195,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="flex w-full flex-row flex-wrap">
           <div className=" flex-1 pl-2 min-w-[250px] pb-2">
             <p>Procter & Gamble</p>
-            <p>Cincinnati, OH</p>
+            <p>Cincinnati, Ohio</p>
             <p>
               <i>May 2023 - Aug 2023</i>
             </p>

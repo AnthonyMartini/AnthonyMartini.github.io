@@ -47,7 +47,7 @@ html{
   align-items: center;
   flex-direction: column;
   background-size: cover;
-  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(img/USFCampus.jpg);
+  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(img/headerGradient.jpg);
 }
 .pfp {
   height: 320px;
@@ -59,13 +59,10 @@ html{
   background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(img/pfp.jpg);
 }
 
-.lightContent{
-  background: rgb(101,127,189);
-background: linear-gradient(54deg, rgb(88, 111, 167) 0%, rgb(106, 217, 239) 100%);
-}
 .darkContent{
-  background: rgb(23,37,80);
-  background: radial-gradient(circle, rgb(6, 21, 63) 0%, rgb(1, 23, 88) 100%);
+  background: rgb(13, 21, 46);
+  background: radial-gradient(circle, rgb(2, 7, 19) 0%, rgb(1, 23, 88) 100%);
+  
 }
 
 .projectImage{
@@ -108,17 +105,23 @@ background: linear-gradient(54deg, rgb(88, 111, 167) 0%, rgb(106, 217, 239) 100%
 .garageOpener {
   background-image: url(img/GarageOpener.jpeg);
 }
-.lineJumpr {
-  background-image: url(img/LineJumpr.jpeg);
+.xrays {
+  background-image: url(img/xrays.png);
 }
-.profspective {
-  background-image: url(img/Profspective.png);
+.nextStep {
+  background-image: url(img/NextStep.png);
 }
 .LinkedIn {
   width:40px;
   height: 40px;
   background-size:cover;
   background-image: url(img/li.png);
+}
+.GitHub {
+  width:40px;
+  height: 40px;
+  background-size:cover;
+  background-image: url(img/gh.png);
 }
 
 .menuBar{
@@ -142,4 +145,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.animate-blink {
+  animation: blink 1.2s infinite;
 }

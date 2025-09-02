@@ -6,7 +6,7 @@ import { forwardRef, LegacyRef } from "react";
 const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   return (
     <div
-      className="bg-blue-950 p-4 font-serif flex flex-col items-center pt-[20px] text-black"
+      className="darkContent p-4 font-serif flex flex-col items-center pt-[40px] text-black"
       ref={ref}
     >
       <h1 className="text-blue-300 text-[45px] font-TerminalGrotesque">

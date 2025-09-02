@@ -21,7 +21,7 @@ const Card = {
     return (
       <div
         className={cn(
-          " bg-slate-50 rounded-[10px] p-2 hoverScale text-[14px] mt-4 drop-shadow-lg ",
+          " bg-[#ffffffd7] rounded-[10px] p-2 hoverScale text-[14px] mt-4 drop-shadow-lg hover:bg-[#ffffff] ",
           className
         )}
       >
@@ -41,7 +41,9 @@ const Card = {
         >
           {children}
         </p>
-        <div className={`${logoClass} cardImage hidden sm:block`} />
+        {logoClass && (
+          <div className={`${logoClass} cardImage hidden sm:block`} />
+        )}
         <div className="w-full h-[3px] bg-slate-700 mb-2 rounded-[3px]"></div>
       </div>
     );
