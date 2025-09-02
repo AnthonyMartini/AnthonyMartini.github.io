@@ -8,8 +8,8 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
       className="bg-gradient-to-b from-gray-300 to-white p-4 font-serif flex flex-col items-center pt-[40px] w-full"
       ref={ref}
     >
-      <h1 className="text-black text-[45px] font-TerminalGrotesque ">
-        My Favorite Projects
+      <h1 className="text-black text-[45px] font-TerminalGrotesque text-center">
+        Featured Projects
       </h1>
       <div className="bg-black h-[3px] w-[85%] rounded-lg mt-1"></div>
       <div className="w-full flex flex-row flex-wrap justify-center gap-4 text-black">

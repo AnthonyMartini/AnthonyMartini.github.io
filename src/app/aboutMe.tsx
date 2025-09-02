@@ -18,8 +18,8 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       <div className="bg-black h-[3px] w-[85%] rounded-lg"></div>
       <div className="flex flex-row pt-10 w-[85%] flex-wrap">
         <div className="flex-1 flex justify-center">
-          <div className="relative bg-black h-[320px] w-[420px] pfp rounded-[160px] rounded-tl-[50px] rounded-br-[50px] shadow-xl">
-            <span className="absolute -right-6 top-10 rotate-[-6deg] bg-white/80 text-black rounded px-2 py-1 shadow italic text-sm">
+          <div className="relative bg-black h-[220px] w-[288px] md:w-[420px] md:h-[320px] pfp rounded-[100px] md:rounded-[160px] rounded-tl-[50px] rounded-br-[50px] shadow-xl">
+            <span className="absolute -left-6 top-10 rotate-[-6deg] bg-white/80 text-black rounded px-2 py-1 shadow italic text-sm">
               This is me in Rishikesh, India!
             </span>
           </div>
