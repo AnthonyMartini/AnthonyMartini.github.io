@@ -10,7 +10,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       ref={ref}
     >
       <h1 className="text-blue-300 text-[45px] font-TerminalGrotesque">
-        Achievments
+        Achievements
       </h1>
       <div className="bg-blue-300 h-[3px] w-[85%] rounded-lg "></div>
 
