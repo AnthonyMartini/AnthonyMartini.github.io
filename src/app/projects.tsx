@@ -57,8 +57,8 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               GPU and CPU for clinical and low-resource settings.
             </p>
             <div className="w-full mt-2 flex flex-row gap-2 flex-wrap">
-              <Tag value="Swift" />
-              <Tag value="OOP" />
+              <Tag value="Python" />
+              <Tag value="Machine Learning" />
             </div>
           </div>
         </Card.Root>
@@ -83,8 +83,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
               <Tag value="React" />
               <Tag value="Tailwind" />
               <Tag value="Next.JS" />
-              <Tag value="Azure" />
-              <Tag value="SQL" />
+              <Tag value="AWS" />
             </div>
           </div>
         </Card.Root>
