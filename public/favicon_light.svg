@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="128" fill="#f8fafc"/>
+  <text x="50%" y="54%" font-family="monospace" font-weight="bold" font-size="240" fill="#1e293b" text-anchor="middle" dominant-baseline="middle" transform="translate(256, 256) scale(0.9, 1.3) translate(-256, -256)">[AM]</text>
+  <rect width="512" height="512" rx="128" fill="none" stroke="#1e293b" stroke-width="32"/>
+</svg>

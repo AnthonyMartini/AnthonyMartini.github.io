@@ -22,11 +22,11 @@ export default function Home() {
   return (
     <div className="static w-full">
       <MenuBar
-        items={[
-          { name: "About Me", object: aboutMeRef.current! },
-          { name: "Résumé", object: resumeRef.current! },
-          { name: "Projects", object: projectsRef.current! },
-          { name: "Achievements", object: achievementsRef.current! },
+        refs={[
+          { name: "About Me", ref: aboutMeRef },
+          { name: "Resume", ref: resumeRef },
+          { name: "Projects", ref: projectsRef },
+          { name: "Achievements", ref: achievementsRef },
         ]}
       />
       <Header />

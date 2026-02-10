@@ -1,60 +1,74 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { cn } from "./helper/helpers";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-interface Option {
-  name: string;
-  object: HTMLDivElement;
-}
-interface MenuBarProps {
-  items: Option[];
-}
-
-export default function MenuBar({ items }: MenuBarProps) {
-  const [bgClass, setBgClass] = useState("bg-opacity-0");
+const MenuBar = ({
+  refs,
+}: {
+  refs: { name: string; ref: React.RefObject<HTMLDivElement> }[];
+}) => {
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    if (window.scrollY > 350) {
-      setBgClass("bg-opacity-100");
-    } else {
-      setBgClass("bg-opacity-0");
-    }
-    const onScroll = () => {
-      if (window.scrollY > 350) {
-        setBgClass("bg-opacity-100");
-      } else {
-        setBgClass("bg-opacity-0");
-      }
-    };
-    // clean up code
-    window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(!entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(footer);
+    return () => observer.disconnect();
   }, []);
 
+  const items = [
+    { name: "About Me", object: refs[0]?.ref.current },
+    { name: "Resume", object: refs[1]?.ref.current },
+    { name: "Projects", object: refs[2]?.ref.current },
+    { name: "Achievements", object: refs[3]?.ref.current },
+  ];
+
   return (
-    <div
-      className={cn(
-        "  h-[41px] w-full sticky top-0 mt-[-41px] z-10 bg-[#252525]  border-black transition-all duration-1000 justify-center flex",
-        bgClass
-      )}
-    >
-      <div className=" flex max-w-[800px] w-full h-full text-white  text-center justify-between">
-        {items.map((item) => (
-          <div
-            key={item.name}
-            className=" hover:text-[#ff722c] px-2 h-full content-center cursor-pointer text-[13px] sm:text-[14px] overflow-hidden"
-            onClick={() =>
-              item.object!.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
+    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+      <AnimatePresence>
+        {isVisible && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            className={cn(
+              "menuBar rounded-full px-6 py-3 flex items-center space-x-6",
+              "bg-white/80 backdrop-blur-md border border-slate-200 shadow-lg"
+            )}
           >
-            {item.name}
-          </div>
-        ))}
-      </div>
+            {items.map((item) => (
+              <motion.div
+                key={item.name}
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="cursor-pointer text-sm md:text-base font-medium text-slate-600 hover:text-electric-blue transition-colors duration-200"
+                onClick={() => {
+                  if (item.object) {
+                    item.object.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                }}
+              >
+                {item.name}
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
+
+export default MenuBar;

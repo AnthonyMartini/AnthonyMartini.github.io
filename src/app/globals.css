@@ -2,44 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 @font-face {
-  font-family: 'TerminalGrotesque'; /* Choose a name for your font */
-  src: url('./fonts/terminal-grotesque_open.otf') format('opentype');
+  font-family: "TerminalGrotesque";
+  src: url("/fonts/terminal-grotesque.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-.TerminalGrotesque {
-      font-family: 'TerminalGrotesque' /* Include a fallback font */
-  }
-.hoverScale {
-  transition: 0.3s;
-  backface-visibility: hidden;
+:root {
+  --foreground-rgb: 30, 41, 59;
+  /* Slate 800 */
+  --background-rgb: 248, 250, 252;
+  /* Slate 50 */
 }
 
-.hoverScale:hover {
-  transform: translateZ(0);
-  transform: scale(1.01);
-
-
-}
-html{
-  scroll-behavior: smooth;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  cursor: default;
+  /* Reverting custom cursor for cleaner feel */
+  overflow-x: hidden;
 }
 
+.text-glow {
+  /* Subtle shadow for depth, not neon glow */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Legacy Classes (Keeping for compatibility during refactor) */
 .header {
   width: 100%;
   display: flex;
@@ -47,109 +44,141 @@ html{
   align-items: center;
   flex-direction: column;
   background-size: cover;
-  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url(img/headerGradient.jpg);
+  /* Light overlay on the original gradient image */
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4)), url(/img/headerGradient.jpg);
 }
+
 .pfp {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-size: cover;
-  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), url(img/pfp.jpg);
+  background-image: url(/img/pfp.jpg);
 }
 
-.darkContent{
-  background: rgb(13, 21, 46);
-  background: radial-gradient(circle, rgb(2, 7, 19) 0%, rgb(1, 23, 88) 100%);
-  
+.darkContent {
+  /* Renaming conceptually to "lightContent" but keeping class name to avoid breaking refactors immediately */
+  background: rgb(248, 250, 252);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(241, 245, 249) 100%);
 }
 
-.projectImage{
-
-  background-size:cover;
+.projectImage {
+  background-size: cover;
   border-radius: 15px;
 }
-.cardImage{
 
-  width:40px;
+.cardImage {
+  width: 40px;
   height: 40px;
-  background-size:contain;
+  background-size: contain;
   background-repeat: no-repeat;
   margin-bottom: 4px;
 }
-.USF{
-  background-image: url(img/USFLogo.png);
-}
-.UC{
-  background-image: url(img/UCLogo.png);
-}
-.JPM{
-  width:73px;
-  background-image: url(img/JPMorgan.png);
-}
-.PG{
-  background-image: url(img/PG.png);
-}
-.IPG{
-  background-image: url(img/IPG.png);
-}
-.BSA{
-  background-image: url(img/BSA.png);
-}
-.NM{
-  background-image: url(img/National\ Merit\ Logo.png);
+
+.USF {
+  background-image: url(/img/USFLogo.png);
 }
 
+.UC {
+  background-image: url(/img/UCLogo.png);
+}
+
+.JPM {
+  width: 73px;
+  background-image: url(/img/JPMorgan.png);
+}
+
+.PG {
+  background-image: url(/img/PG.png);
+}
+
+.IPG {
+  background-image: url(/img/IPG.png);
+}
+
+.BSA {
+  background-image: url(/img/BSA.png);
+}
+
+.NM {
+  background-image: url(/img/National%20Merit%20Logo.png);
+}
 
 .garageOpener {
-  background-image: url(img/GarageOpener.jpeg);
+  background-image: url(/img/GarageOpener.jpeg);
 }
+
 .xrays {
-  background-image: url(img/xrays.png);
+  background-image: url(/img/xrays.png);
 }
+
+.fpga {
+  background-image: url("/img/FPGA%20Board.png");
+}
+
+.roberta {
+  background-image: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
+  position: relative;
+}
+
+.roberta::after {
+  content: "NLP";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "TerminalGrotesque", monospace;
+  font-size: 2rem;
+  color: #94a3b8;
+}
+
 .nextStep {
-  background-image: url(img/NextStep.png);
+  background-image: url(/img/NextStep.png);
 }
+
 .LinkedIn {
-  width:40px;
+  width: 40px;
   height: 40px;
-  background-size:cover;
-  background-image: url(img/li.png);
+  background-size: cover;
+  background-image: url(/img/li.png);
 }
+
 .GitHub {
-  width:40px;
+  width: 40px;
   height: 40px;
-  background-size:cover;
-  background-image: url(img/gh.png);
+  background-size: cover;
+  background-image: url(/img/gh.png);
 }
 
-.menuBar{
-
-  transition:10s;
-  transition:all;
-  top:0;
-  z-index: 100;
-
+.menuBar {
+  transition: all 0.3s;
 }
 
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+.menuBar:hover {
+  transform: scale(1.02);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  }
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.2; }
 }
-.animate-blink {
-  animation: blink 1.2s infinite;
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #004411;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
 }

@@ -1,52 +1,56 @@
 "use client";
-import React from "react";
-import { cn } from "./cn";
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
-interface IProps {
-  children?: React.ReactNode;
+const Root = ({ children, className }: { children: ReactNode; className?: string }) => {
+  return (
+    <div
+      className={cn(
+        "glass-panel rounded-xl p-6 transition-all duration-300",
+        "bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm",
+        "hover:shadow-lg hover:-translate-y-1 hover:border-electric-blue/30",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+const Heading = ({
+  children,
+  className,
+  logoClass,
+}: {
+  children: ReactNode;
   className?: string;
   logoClass?: string;
-}
-
-function Tag({ value }: { value: string }) {
+}) => {
   return (
-    <p className=" h-[26px] content-center border-2 w-fit px-[4px] rounded-[6px] border-[#09a7e2] text-[#09a7e2] hover:animate-pulse text-nowrap">
-      {value}
-    </p>
-  );
-}
-
-const Card = {
-  Root: function Root({ children, className }: IProps) {
-    return (
-      <div
-        className={cn(
-          " bg-[#ffffffd7] rounded-[10px] p-2 hoverScale text-[14px] mt-4 drop-shadow-lg hover:bg-[#ffffff] ",
-          className
-        )}
-      >
-        {children}
-      </div>
-    );
-  },
-
-  Heading: function Heading({ children, className, logoClass }: IProps) {
-    return (
-      <div className="flex flex-row flex-wrap items-center">
-        <p
+    <div className={cn("flex flex-row-reverse justify-between items-start mb-4 gap-4", className)}>
+      {logoClass && (
+        <div
           className={cn(
-            "font-bold text-[18px] sm:text-[22px] flex-1 text-slate-900",
-            className
+            "cardImage w-12 h-12 rounded-full hover:scale-110 transition-transform duration-300 flex-shrink-0",
+            logoClass
           )}
-        >
-          {children}
-        </p>
-        {logoClass && (
-          <div className={`${logoClass} cardImage hidden sm:block`} />
-        )}
-        <div className="w-full h-[3px] bg-slate-700 mb-2 rounded-[3px]"></div>
-      </div>
-    );
-  },
+        />
+      )}
+      {!logoClass && <div className="w-12 h-12" />} {/* Spacer if no logo to keep title left */}
+      <h3 className="text-xl md:text-2xl font-bold font-terminal text-slate-800 text-left flex-grow pt-2">
+        {children}
+      </h3>
+    </div>
+  );
 };
-export { Card, Tag };
+
+export const Card = { Root, Heading };
+
+export const Tag = ({ value }: { value: string }) => {
+  return (
+    <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 border border-slate-300 hover:bg-electric-blue hover:text-white hover:border-electric-blue transition-colors duration-200">
+      {value}
+    </span>
+  );
+};
+

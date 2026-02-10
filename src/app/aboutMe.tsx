@@ -1,65 +1,66 @@
 "use client";
-import React from "react";
-import { forwardRef, LegacyRef } from "react";
+import React, { forwardRef, LegacyRef } from "react";
+import { motion } from "framer-motion";
 
 const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
-  function BB({ children }: { children: React.ReactNode }) {
-    return <p className="font-bold inline text-pink-700">{children}</p>;
-  }
   return (
     <div
       id="about-me-section"
-      className="bg-gradient-to-b from-gray-300 to-white p-4 font-serif flex flex-col items-center pt-[40px]"
+      className="relative py-20 px-4 min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-50"
       ref={ref}
     >
-      <h1 className="text-black text-[45px] font-TerminalGrotesque">
-        About Me
-      </h1>
-      <div className="bg-black h-[3px] w-[85%] rounded-lg"></div>
-      <div className="flex flex-row pt-10 w-[85%] flex-wrap">
-        <div className="flex-1 flex justify-center">
-          <div className="relative bg-black h-[220px] w-[288px] md:w-[420px] md:h-[320px] pfp rounded-[100px] rounded-tl-[30px] rounded-br-[30px] md:rounded-[160px] md:rounded-tl-[50px] md:rounded-br-[50px] shadow-xl">
-            <span className="absolute -left-6 top-10 rotate-[-6deg] bg-white/80 text-black rounded px-2 py-1 shadow italic text-sm">
-              This is me in Rishikesh, India!
-            </span>
-          </div>
-        </div>
-        <div className="flex-1 flex flex-col space-y-4 text-[16px] justify-center p-4 text-black bg-[#0000001a] rounded-lg my-12 shadow-xl">
-          <span>
-            Experienced in full stack development using tools such as{" "}
-            <BB>React</BB>, <BB>Tailwind</BB>, <BB>AWS</BB>, <BB>FastAPI</BB>,
-            and <BB>Next.js</BB>.
-          </span>
-          <span>
-            Strong understanding of computer science concepts like{" "}
-            <BB>data structures</BB>, <BB>algorithims</BB>, and{" "}
-            <BB>graph theory</BB>.
-          </span>
-          <span>
-            Extensive studies in <BB>computer archicteture</BB> and{" "}
-            <BB>circuit design</BB>.
-          </span>
-          <span>
-            Explored personal projects covering <BB>3D design</BB> and{" "}
-            <BB>PCB Sketching</BB>.
-          </span>
-        </div>
-      </div>
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
 
-      <div className=""></div>
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl w-full z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        {/* Profile Picture */}
+        <div className="flex justify-center order-1 md:order-2">
+            <div className="relative group w-64 h-64 md:w-80 md:h-80">
+                <div className="absolute inset-0 bg-electric-blue rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="relative w-full h-full pfp rounded-full border-4 border-white shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-105" />
+                <div className="absolute -bottom-2 -right-2 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-mono text-slate-600 shadow-lg border border-slate-200 transform rotate-[-6deg] hover:rotate-0 transition-transform duration-300 z-20">
+                    📍 This is me in Rishikesh, India!
+                </div>
+            </div>
+        </div>
+
+        {/* Text Content */}
+        <div className="order-2 md:order-1 space-y-6 text-center md:text-left">
+             <div className="glass-panel p-8 rounded-2xl relative overflow-hidden bg-white/60 backdrop-blur-md border border-slate-200 shadow-sm">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-blue to-transparent opacity-50" />
+                
+                <h2 className="text-lg md:text-xl lg:text-2xl font-terminal text-slate-800 mb-6 break-words">
+                  System.Init(<span className="text-electric-blue">"Hello_World"</span>);
+                </h2>
+                
+                <p className="text-slate-600 leading-relaxed font-sans text-lg">
+                  I&apos;m a <BB>Computer Engineering</BB> student at the <BB>University of South Florida</BB> pursuing a minor in Mathematics in the Honors College.
+                </p>
+                <p className="text-slate-600 leading-relaxed font-sans text-lg mt-4">
+                  Passionate about building scalable systems, intuitive interfaces, and optimized backend solutions.
+                </p>
+             </div>
+
+             <div className="font-mono text-sm text-slate-400 mt-4">
+                <span className="text-electric-blue">user@portfolio</span>:~/about$ <span className="animate-pulse">_</span>
+             </div>
+        </div>
+      </motion.div>
     </div>
   );
 });
-AboutMe.displayName = "About Me";
+
+const BB = ({ children }: { children: React.ReactNode }) => (
+  <span className="font-bold text-slate-800 border-b-2 border-electric-blue/30 hover:border-electric-blue transition-colors duration-300">
+    {children}
+  </span>
+);
+
+AboutMe.displayName = "AboutMe";
 export default AboutMe;
-
-/*
-  className="bg-black p-4 font-serif flex flex-col items-center pt-[40px]"
-      ref={ref}
-    >
-      <h1 className="text-blue-300 font-bold text-[28px]">Résumé</h1>
-      <h1 className="text-blue-300 font-bold text-[22px] w-[85%]">Education</h1>
-      <div className="bg-blue-300 h-[3px] w-[85%] rounded-lg mt-1"></div>
-
-
-*/
