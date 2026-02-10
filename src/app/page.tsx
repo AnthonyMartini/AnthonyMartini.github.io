@@ -16,8 +16,8 @@ export default function Home() {
   const achievementsRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    setRerender(!rerender);
-  }, [aboutMeRef, resumeRef, projectsRef, achievementsRef]);
+    setRerender((r) => !r);
+  }, []);
   console.log(aboutMeRef.current);
   return (
     <div className="static w-full">

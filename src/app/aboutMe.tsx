@@ -36,7 +36,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-blue to-transparent opacity-50" />
                 
                 <h2 className="text-lg md:text-xl lg:text-2xl font-terminal text-slate-800 mb-6 break-words">
-                  System.Init(<span className="text-electric-blue">"Hello_World"</span>);
+                  System.Init(<span className="text-electric-blue">&quot;Hello_World&quot;</span>);
                 </h2>
                 
                 <p className="text-slate-600 leading-relaxed font-sans text-lg">
