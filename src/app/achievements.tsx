@@ -1,5 +1,5 @@
 "use client";
-import { Card, Tag } from "./card";
+import { Tag } from "./card";
 import { forwardRef, LegacyRef } from "react";
 import { motion } from "framer-motion";
 
@@ -26,56 +26,66 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             </h1>
 
             {/* Achievements */}
-            <div className="space-y-6 mb-16">
-            <Card.Root className="w-full">
-                <Card.Heading>Microsoft Certified: Power Platform App Maker</Card.Heading>
-                <div className="flex w-full flex-row flex-wrap text-slate-600">
-                <div className="flex-1 pl-2">
-                    <p>
-                        Measured ability to design and create business solutions to simplify and automate tasks and processes using the Microsoft Power Platform.
-                    </p>
+            <div className="flex flex-wrap gap-6 mb-16 justify-center">
+            {/* Achievement Card 1 - Microsoft */}
+            <motion.div 
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.2 }}
+                className="glass-panel rounded-xl p-6 bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-lg hover:border-electric-blue/30 transition-all duration-300 flex-1 min-w-[320px] max-w-[400px]"
+            >
+                <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center">
+                    <img 
+                        src="/img/PowerPlatform.png" 
+                        alt="Microsoft Power Platform" 
+                        className="h-full w-auto object-contain"
+                    />
                 </div>
-                <div className="w-full mt-4 flex flex-row gap-2 flex-wrap">
-                    <Tag value="Certification" />
-                    <Tag value="Microsoft" />
-                    <Tag value="Low-Code" />
+                <h3 className="text-lg font-bold font-terminal text-slate-800 flex-1">
+                    Microsoft Certified: Power Platform App Maker
+                </h3>
                 </div>
-                </div>
-            </Card.Root>
+            </motion.div>
 
-            <Card.Root className="w-full">
-                <Card.Heading>National Merit Scholar</Card.Heading>
-                <div className="flex w-full flex-row flex-wrap text-slate-600">
-                <div className="flex-1 pl-2">
-                    <p>
-                    Finalists are selected based on their entire application which
-                    includes recommendations, test scores, transcripts, and a personal
-                    essay.
-                    </p>
+            {/* Achievement Card 2 - National Merit */}
+            <motion.div 
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.2 }}
+                className="glass-panel rounded-xl p-6 bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-lg hover:border-electric-blue/30 transition-all duration-300 flex-1 min-w-[320px] max-w-[400px]"
+            >
+                <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center">
+                    <img 
+                        src="/img/National Merit Logo.png" 
+                        alt="National Merit Scholar" 
+                        className="h-full w-auto object-contain"
+                    />
                 </div>
-                <div className="w-full mt-4 flex flex-row gap-2 flex-wrap">
-                    <Tag value="STEM" />
-                    <Tag value="Scholarship" />
-                    <Tag value="Academic" />
+                <h3 className="text-lg font-bold font-terminal text-slate-800 flex-1">
+                    National Merit Scholar Finalist
+                </h3>
                 </div>
-                </div>
-            </Card.Root>
+            </motion.div>
 
-            <Card.Root className="w-full">
-                <Card.Heading>Eagle Scout</Card.Heading>
-                <div className="flex w-full flex-row flex-wrap text-slate-600">
-                <div className="flex-1 pl-2">
-                    <p>
-                    Highest achievement or rank attainable in the Scouts BSA program of the Boy Scouts of America.
-                    </p>
+            {/* Achievement Card 3 - Eagle Scout */}
+            <motion.div 
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ duration: 0.2 }}
+                className="glass-panel rounded-xl p-6 bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-lg hover:border-electric-blue/30 transition-all duration-300 flex-1 min-w-[320px] max-w-[400px]"
+            >
+                <div className="flex items-center gap-4">
+                <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center">
+                    <img 
+                        src="/img/BSA.png" 
+                        alt="Eagle Scout" 
+                        className="h-full w-auto object-contain"
+                    />
                 </div>
-                <div className="w-full mt-4 flex flex-row gap-2 flex-wrap">
-                    <Tag value="Leadership" />
-                    <Tag value="Community" />
-                    <Tag value="Service" />
+                <h3 className="text-lg font-bold font-terminal text-slate-800 flex-1">
+                    Eagle Scout
+                </h3>
                 </div>
-                </div>
-            </Card.Root>
+            </motion.div>
             </div>
 
             {/* Skills */}

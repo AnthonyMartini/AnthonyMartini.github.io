@@ -140,45 +140,140 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl w-full z-10 space-y-16"
+        className="max-w-7xl w-full z-10"
       >
-        {/* Education Section */}
-        <div>
-            <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center mb-12">
-            Education_
-            </h1>
-            <Card.Root logoClass="USF">
-                <Card.Heading>University of South Florida</Card.Heading>
-                <div className="flex w-full flex-row flex-wrap text-slate-600">
-                    <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                        <p className="font-bold text-slate-800">B.S. in Computer Engineering</p>
-                        <p className="text-sm">Minor in Mathematics, Honors College</p>
-                        <p className="text-electric-blue mt-2 font-mono text-sm">
-                            May 2026
-                        </p>
-                         <p className="text-sm mt-1 font-semibold">GPA: 4.0/4.0</p>
-                    </div>
-                    <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                        <p className="text-sm font-semibold mb-2">Relevant Coursework:</p>
-                        <p className="text-sm leading-relaxed">
-                            Natural Language Processing, Deep Reinforcement Learning, HW Accelerators for ML, 
-                            AI and Analytics, Analysis of Algorithms, Differential Equations, Graph Theory.
-                        </p>
-                    </div>
-                </div>
-            </Card.Root>
-        </div>
+        {/* Main Flexbox Container - 2 columns: (Education + Achievements) and Experience */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          
+          {/* Left Column: Education + Achievements & Skills */}
+          <div className="flex-1 min-w-[300px] space-y-12">
+            {/* Education Block */}
+            <div>
+              <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
+                Education_
+              </h1>
+              <Card.Root logoClass="USF">
+                  <Card.Heading>University of South Florida</Card.Heading>
+                  <div className="flex w-full flex-row flex-wrap text-slate-600">
+                      <div className="flex-1 pl-2 min-w-[250px] pb-4">
+                          <p className="font-bold text-slate-800">B.S. in Computer Engineering</p>
+                          <p className="text-sm">Minor in Mathematics, Honors College</p>
+                          <p className="text-electric-blue mt-2 font-mono text-sm">
+                              May 2026
+                          </p>
+                           <p className="text-sm mt-1 font-semibold">GPA: 4.0/4.0</p>
+                      </div>
+                      <div className="flex-1 pl-2 min-w-[250px] pb-4">
+                          <p className="text-sm font-semibold mb-2">Relevant Coursework:</p>
+                          <p className="text-sm leading-relaxed">
+                              Natural Language Processing, Deep Reinforcement Learning, HW Accelerators for ML, 
+                              AI and Analytics, Analysis of Algorithms, Differential Equations, Graph Theory.
+                          </p>
+                      </div>
+                  </div>
+              </Card.Root>
+            </div>
 
-        {/* Experience Section */}
-        <div>
-            <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center mb-12">
-            Experience_
+            {/* Achievements & Skills Block */}
+            <div>
+              <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
+                Achievements & Skills_
+              </h1>
+
+              {/* Achievements */}
+              <div className="flex flex-row gap-4 mb-8 justify-center">
+              {/* Achievement Card 1 - Microsoft */}
+              <motion.div 
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.2 }}
+                  className="glass-panel rounded-xl p-4 bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-lg hover:border-electric-blue/30 transition-all duration-300 flex-1"
+              >
+                  <div className="flex flex-col items-center gap-3 text-center">
+                  <div className="w-12 h-12 flex items-center justify-center">
+                      <img 
+                          src="/img/PowerPlatform.png" 
+                          alt="Microsoft Power Platform" 
+                          className="h-full w-auto object-contain"
+                      />
+                  </div>
+                  <h3 className="text-xs font-bold font-terminal text-slate-800">
+                      Microsoft Certified: Power Platform App Maker
+                  </h3>
+                  </div>
+              </motion.div>
+
+              {/* Achievement Card 2 - National Merit */}
+              <motion.div 
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.2 }}
+                  className="glass-panel rounded-xl p-4 bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-lg hover:border-electric-blue/30 transition-all duration-300 flex-1"
+              >
+                  <div className="flex flex-col items-center gap-3 text-center">
+                  <div className="w-12 h-12 flex items-center justify-center">
+                      <img 
+                          src="/img/National Merit Logo.png" 
+                          alt="National Merit Scholar" 
+                          className="h-full w-auto object-contain"
+                      />
+                  </div>
+                  <h3 className="text-xs font-bold font-terminal text-slate-800">
+                      National Merit Scholar Finalist
+                  </h3>
+                  </div>
+              </motion.div>
+
+              {/* Achievement Card 3 - Eagle Scout */}
+              <motion.div 
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ duration: 0.2 }}
+                  className="glass-panel rounded-xl p-4 bg-white/80 backdrop-filter backdrop-blur-md border border-slate-200 shadow-sm hover:shadow-lg hover:border-electric-blue/30 transition-all duration-300 flex-1"
+              >
+                  <div className="flex flex-col items-center gap-3 text-center">
+                  <div className="w-12 h-12 flex items-center justify-center">
+                      <img 
+                          src="/img/BSA.png" 
+                          alt="Eagle Scout" 
+                          className="h-full w-auto object-contain"
+                      />
+                  </div>
+                  <h3 className="text-xs font-bold font-terminal text-slate-800">
+                      Eagle Scout
+                  </h3>
+                  </div>
+              </motion.div>
+              </div>
+
+              {/* Skills */}
+              <div className="space-y-6">
+                   <div className="glass-panel p-4 rounded-xl bg-white/60">
+                      <h3 className="text-base font-bold font-terminal text-slate-800 mb-3">Languages</h3>
+                      <div className="flex flex-wrap gap-2">
+                          {["Python", "TypeScript", "C++", "C", "C#", "Swift", "Verilog", "RISC-V Assembly"].map(skill => (
+                              <Tag key={skill} value={skill} />
+                          ))}
+                      </div>
+                   </div>
+                   <div className="glass-panel p-4 rounded-xl bg-white/60">
+                      <h3 className="text-base font-bold font-terminal text-slate-800 mb-3">Tools & Frameworks</h3>
+                      <div className="flex flex-wrap gap-2">
+                          {["PyTorch", "AWS", "React", "Tailwind", "FastAPI", "WebSockets", "Numpy", "Git", "Postman", "Jira", "Power Apps"].map(skill => (
+                               <Tag key={skill} value={skill} />
+                          ))}
+                      </div>
+                   </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Work Experience */}
+          <div className="flex-1 min-w-[300px]">
+            <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
+              Experience_
             </h1>
 
             <div className="space-y-8">
                 {/* P&G Consolidated Expandable */}
                 <ExpandablePGCard />
-
 
                 {/* Intertape Polymer Group */}
                 <Card.Root logoClass="IPG">
@@ -210,12 +305,13 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                     </div>
                 </div>
                 </Card.Root>
-
-
             </div>
+          </div>
+
         </div>
       </motion.div>
     </div>
+    
   );
 });
 Resume.displayName = "Resume";
