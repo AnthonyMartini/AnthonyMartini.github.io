@@ -19,41 +19,16 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         className="w-full max-w-5xl z-10 space-y-16"
       >
         
-        {/* Technical Skills Section */}
+        {/* Achievements & Skills Section */}
         <div>
-            <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center mb-12">
-            Skills_
-            </h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                 <div className="glass-panel p-6 rounded-xl bg-white/60">
-                    <h3 className="text-xl font-bold font-terminal text-slate-800 mb-4">Languages</h3>
-                    <div className="flex flex-wrap gap-2">
-                        {["Python", "TypeScript", "C++", "C", "C#", "Swift", "Verilog", "RISC-V Assembly"].map(skill => (
-                            <Tag key={skill} value={skill} />
-                        ))}
-                    </div>
-                 </div>
-                 <div className="glass-panel p-6 rounded-xl bg-white/60">
-                    <h3 className="text-xl font-bold font-terminal text-slate-800 mb-4">Tools & Frameworks</h3>
-                    <div className="flex flex-wrap gap-2">
-                        {["PyTorch", "AWS", "React", "Tailwind", "FastAPI", "WebSockets", "Numpy", "Git", "Postman", "Jira", "Power Apps"].map(skill => (
-                             <Tag key={skill} value={skill} />
-                        ))}
-                    </div>
-                 </div>
-            </div>
-        </div>
-
-
-        {/* Achievements Section */}
-        <div>
-            <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center mb-12">
-            Achievements_
+            <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center mb-8">
+            Achievements & Skills_
             </h1>
 
-            <div className="space-y-6">
+            {/* Achievements */}
+            <div className="space-y-6 mb-16">
             <Card.Root className="w-full">
-                <Card.Heading logoClass="MS">Microsoft Certified: Power Platform App Maker</Card.Heading>
+                <Card.Heading>Microsoft Certified: Power Platform App Maker</Card.Heading>
                 <div className="flex w-full flex-row flex-wrap text-slate-600">
                 <div className="flex-1 pl-2">
                     <p>
@@ -69,7 +44,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             </Card.Root>
 
             <Card.Root className="w-full">
-                <Card.Heading logoClass="NM">National Merit Scholar</Card.Heading>
+                <Card.Heading>National Merit Scholar</Card.Heading>
                 <div className="flex w-full flex-row flex-wrap text-slate-600">
                 <div className="flex-1 pl-2">
                     <p>
@@ -87,7 +62,7 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             </Card.Root>
 
             <Card.Root className="w-full">
-                <Card.Heading logoClass="BSA">Eagle Scout</Card.Heading>
+                <Card.Heading>Eagle Scout</Card.Heading>
                 <div className="flex w-full flex-row flex-wrap text-slate-600">
                 <div className="flex-1 pl-2">
                     <p>
@@ -101,6 +76,26 @@ const Achievements = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                 </div>
                 </div>
             </Card.Root>
+            </div>
+
+            {/* Skills */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                 <div className="glass-panel p-6 rounded-xl bg-white/60">
+                    <h3 className="text-xl font-bold font-terminal text-slate-800 mb-4">Languages</h3>
+                    <div className="flex flex-wrap gap-2">
+                        {["Python", "TypeScript", "C++", "C", "C#", "Swift", "Verilog", "RISC-V Assembly"].map(skill => (
+                            <Tag key={skill} value={skill} />
+                        ))}
+                    </div>
+                 </div>
+                 <div className="glass-panel p-6 rounded-xl bg-white/60">
+                    <h3 className="text-xl font-bold font-terminal text-slate-800 mb-4">Tools & Frameworks</h3>
+                    <div className="flex flex-wrap gap-2">
+                        {["PyTorch", "AWS", "React", "Tailwind", "FastAPI", "WebSockets", "Numpy", "Git", "Postman", "Jira", "Power Apps"].map(skill => (
+                             <Tag key={skill} value={skill} />
+                        ))}
+                    </div>
+                 </div>
             </div>
         </div>
       </motion.div>

@@ -6,7 +6,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   return (
     <div
       id="about-me-section"
-      className="relative py-20 px-4 min-h-screen flex flex-col items-center justify-center overflow-hidden bg-slate-50"
+      className="relative py-20 px-4 min-h-[600px] flex flex-col items-center justify-center overflow-hidden bg-slate-50"
       ref={ref}
     >
       {/* Background Grid */}

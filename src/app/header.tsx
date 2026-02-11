@@ -1,10 +1,20 @@
 "use client";
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const titles = ["Software Engineer", "Power Apps Developer", "UX/UI Enthusiast", "Automation Specialist", "Full Stack Developer"];
 
 const Header = () => {
   const ref = useRef(null);
   const text = "Anthony Martini";
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % titles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div 
@@ -16,14 +26,33 @@ const Header = () => {
       
       {/* Main Content */}
       <div className="z-10 text-center px-4 relative">
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-slate-500 font-mono text-lg md:text-xl mb-4 tracking-widest uppercase"
-        >
-          Software Engineer
-        </motion.p>
+        <div className="h-8 mb-4"> {/* Fixed height container to prevent layout shift */}
+          <AnimatePresence mode="wait">
+            <motion.p 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="text-slate-500 font-mono text-lg md:text-xl tracking-widest uppercase flex justify-center gap-1"
+            >
+              {titles[index].split("").map((char, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ y: 0 }}
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: i * 0.05,
+                    repeat: 0 
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </motion.p>
+          </AnimatePresence>
+        </div>
         
         <motion.h1
           className="text-6xl md:text-8xl lg:text-9xl font-terminal text-slate-900 tracking-tighter"
