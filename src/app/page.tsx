@@ -9,8 +9,8 @@ import Projects from "./projects";
 
 export default function Home() {
   const [rerender, setRerender] = useState(false);
+  const headerRef = useRef<null | HTMLDivElement>(null);
   const aboutMeRef = useRef<null | HTMLDivElement>(null);
-  const resumeRef = useRef<null | HTMLDivElement>(null);
   const projectsRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
@@ -21,16 +21,15 @@ export default function Home() {
     <div className="static w-full">
       <MenuBar
         refs={[
-          { name: "About Me", ref: aboutMeRef },
-          { name: "Resume", ref: resumeRef },
+          { name: "Home", ref: headerRef },
+          { name: "Resume", ref: aboutMeRef },
           { name: "Projects", ref: projectsRef },
         ]}
       />
-      <Header />
+      <Header ref={headerRef} />
 
       <AboutMe ref={aboutMeRef} />
-
-      <Resume ref={resumeRef} />
+      <Resume />
       <Projects ref={projectsRef} />
 
       <Footer />

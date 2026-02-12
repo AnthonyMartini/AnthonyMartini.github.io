@@ -26,10 +26,9 @@ const MenuBar = ({
   }, []);
 
   const items = [
-    { name: "About Me", object: refs[0]?.ref.current },
-    { name: "Resume", object: refs[1]?.ref.current },
-    { name: "Projects", object: refs[2]?.ref.current },
-    { name: "Achievements", object: refs[3]?.ref.current },
+    { name: "Home", ref: refs[0]?.ref },
+    { name: "Resume", ref: refs[1]?.ref },
+    { name: "Projects", ref: refs[2]?.ref },
   ];
 
   return (
@@ -53,8 +52,8 @@ const MenuBar = ({
                 whileTap={{ scale: 0.95 }}
                 className="cursor-pointer text-sm md:text-base font-medium text-slate-600 hover:text-electric-blue transition-colors duration-200"
                 onClick={() => {
-                  if (item.object) {
-                    item.object.scrollIntoView({
+                  if (item.ref?.current) {
+                    item.ref.current.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
                     });

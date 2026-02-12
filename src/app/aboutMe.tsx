@@ -17,10 +17,10 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl w-full z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        className="max-w-6xl w-full z-10 grid grid-cols-1 md:grid-cols-5 gap-12 items-center"
       >
         {/* Profile Picture */}
-        <div className="flex justify-center order-1 md:order-2">
+        <div className="flex justify-center order-1 md:order-2 md:col-span-2">
             <div className="relative group w-64 h-64 md:w-80 md:h-80">
                 <div className="absolute inset-0 bg-electric-blue rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
                 <div className="relative w-full h-full pfp rounded-full border-4 border-white shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-105" />
@@ -31,25 +31,37 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         </div>
 
         {/* Text Content */}
-        <div className="order-2 md:order-1 space-y-6 text-center md:text-left">
+        <div className="order-2 md:order-1 md:col-span-3 space-y-6 text-center md:text-left">
              <div className="glass-panel p-8 rounded-2xl relative overflow-hidden bg-white/60 backdrop-blur-md border border-slate-200 shadow-sm">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-blue to-transparent opacity-50" />
                 
-                <h2 className="text-lg md:text-xl lg:text-2xl font-terminal text-slate-800 mb-6 break-words">
-                  System.Init(<span className="text-electric-blue">&quot;Hello_World&quot;</span>);
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+                  Hello! 
                 </h2>
                 
-                <p className="text-slate-600 leading-relaxed font-sans text-lg">
-                  I&apos;m a <BB>Computer Engineering</BB> student at the <BB>University of South Florida</BB> pursuing a minor in Mathematics in the Honors College.
+                <p className="text-slate-600 leading-relaxed font-sans text-lg mb-6">
+                  I&apos;m a <BB>Computer Engineering</BB> student at the <BB>University of South Florida</BB>. I am passionate about learning and building applications, the tools come second.
                 </p>
-                <p className="text-slate-600 leading-relaxed font-sans text-lg mt-4">
-                  Passionate about building scalable systems, intuitive interfaces, and optimized backend solutions.
-                </p>
+                
+                <div className="space-y-3 text-slate-600 leading-relaxed font-sans text-base">
+                  <p>
+                    Experienced in full stack development using tools such as{" "}
+                    <BB>React</BB>, <BB>Tailwind</BB>, <BB>MongoDB</BB>,{" "}
+                    <BB>Express</BB>, and <BB>Next.js</BB>.
+                  </p>
+                  <p>
+                    Strong understanding of computer science concepts like{" "}
+                    <BB>data structures</BB>, <BB>algorithms</BB>, and{" "}
+                    <BB>graph theory</BB>.
+                  </p>
+                  <p>
+                    Researched <BB>machine learning models</BB> and explored{" "}
+                    <BB>neural networks</BB> for practical applications in automation and data analysis.
+                  </p>
+                </div>
              </div>
 
-             <div className="font-mono text-sm text-slate-400 mt-4">
-                <span className="text-electric-blue">user@portfolio</span>:~/about$ <span className="animate-pulse">_</span>
-             </div>
+
         </div>
       </motion.div>
     </div>

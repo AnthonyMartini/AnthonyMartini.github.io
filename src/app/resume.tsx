@@ -145,12 +145,57 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         {/* Main Flexbox Container - 2 columns: (Education + Achievements) and Experience */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           
+          
+
+          {/* Left Column: Work Experience */}
+          <div className="flex-1 min-w-[300px]">
+            <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
+              Experience
+            </h1>
+
+            <div className="space-y-8">
+                {/* P&G Consolidated Expandable */}
+                <ExpandablePGCard />
+
+                {/* Intertape Polymer Group */}
+                <Card.Root logoClass="IPG">
+                <Card.Heading>Power Platform Developer</Card.Heading>
+                <div className="flex w-full flex-row flex-wrap text-slate-600">
+                    <div className="flex-1 pl-2 min-w-[250px] pb-4">
+                    <p className="font-bold text-slate-800">Intertape Polymer Group</p>
+                    <p className="text-sm">Part-Time</p>
+                    <p className="text-electric-blue mt-2 font-mono text-sm">
+                        Nov 2023 - <span className="text-pink-500 ">Present</span>
+                    </p>
+                    </div>
+                    <div className="flex-1 pl-2 min-w-[250px] pb-4">
+                    <ul className="list-disc pl-5 space-y-2 text-sm">
+                        <li>
+                        Refactored and added new functionality to a warehouse order application, built with React and fastapi.
+                        </li>
+                        <li>
+                        Designed, developed, and maintained <span className="text-electric-blue font-semibold">7+</span> production Power Apps and Power Automate workflows.
+                        </li>
+                    </ul>
+                    </div>
+                    <div className="w-full mt-4 flex flex-row gap-2 flex-wrap">
+                    <Tag value="Power Apps" />
+                    <Tag value="Power Automate" />
+                    <Tag value="React" />
+                    <Tag value="SQL" />
+                    <Tag value="Dataverse" />
+                    </div>
+                </div>
+                </Card.Root>
+            </div>
+          </div>
+
           {/* Left Column: Education + Achievements & Skills */}
           <div className="flex-1 min-w-[300px] space-y-12">
             {/* Education Block */}
             <div>
               <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
-                Education_
+                Education
               </h1>
               <Card.Root logoClass="USF">
                   <Card.Heading>University of South Florida</Card.Heading>
@@ -177,7 +222,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             {/* Achievements & Skills Block */}
             <div>
               <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
-                Achievements & Skills_
+                Achievements & Skills
               </h1>
 
               {/* Achievements */}
@@ -197,7 +242,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                       />
                   </div>
                   <h3 className="text-xs font-bold font-terminal text-slate-800">
-                      Microsoft Certified: Power Platform App Maker
+                      Power Platform App Maker
                   </h3>
                   </div>
               </motion.div>
@@ -262,49 +307,6 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                       </div>
                    </div>
               </div>
-            </div>
-          </div>
-
-          {/* Right Column: Work Experience */}
-          <div className="flex-1 min-w-[300px]">
-            <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
-              Experience_
-            </h1>
-
-            <div className="space-y-8">
-                {/* P&G Consolidated Expandable */}
-                <ExpandablePGCard />
-
-                {/* Intertape Polymer Group */}
-                <Card.Root logoClass="IPG">
-                <Card.Heading>Power Platform Developer</Card.Heading>
-                <div className="flex w-full flex-row flex-wrap text-slate-600">
-                    <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <p className="font-bold text-slate-800">Intertape Polymer Group</p>
-                    <p className="text-sm">Part-Time</p>
-                    <p className="text-electric-blue mt-2 font-mono text-sm">
-                        Nov 2023 - <span className="text-pink-500 ">Present</span>
-                    </p>
-                    </div>
-                    <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <ul className="list-disc pl-5 space-y-2 text-sm">
-                        <li>
-                        Refactored and added new functionality to a warehouse order application, built with React and fastapi.
-                        </li>
-                        <li>
-                        Designed, developed, and maintained <span className="text-electric-blue font-semibold">7+</span> production Power Apps and Power Automate workflows.
-                        </li>
-                    </ul>
-                    </div>
-                    <div className="w-full mt-4 flex flex-row gap-2 flex-wrap">
-                    <Tag value="Power Apps" />
-                    <Tag value="Power Automate" />
-                    <Tag value="React" />
-                    <Tag value="SQL" />
-                    <Tag value="Dataverse" />
-                    </div>
-                </div>
-                </Card.Root>
             </div>
           </div>
 
