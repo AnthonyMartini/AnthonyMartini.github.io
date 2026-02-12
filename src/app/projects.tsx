@@ -44,6 +44,13 @@ const projectsData = [
     tags: ["Python", "CNN", "Deep Learning"],
     links: []
   },
+    {
+    title: "NLP Optimization: Vocabulary Reduction",
+    imageClass: "nlpOptimization",
+    description: "Research paper on LLM vocabulary optimization. Reduced vocab by 13% using NLTK WordNet while improving accuracy to 87.57%.",
+    tags: ["Python", "PyTorch", "NLTK", "LLM"],
+    links: [{ url: "https://github.com/AnthonyMartini/TokenSynonymFilter", title: "NLP Optimization External Link" }]
+  },
   {
     title: "RoBERTa Sexism Detection",
     imageClass: "roberta",
@@ -173,30 +180,30 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
                 >
                     {projectsData.map((project, index) => (
                         <div key={index} className="w-[20%] px-4 flex-shrink-0">
-                             <Card.Root className="h-full flex flex-col">
-                                <Card.Heading className="text-center">
-                                {project.title}
-                                </Card.Heading>
+                             <Card.Root className="h-full overflow-visible">
                                 <div className="flex flex-col h-full">
-                                {project.links.length > 0 ? (
-                                    <a
-                                    title={project.links[0].title}
-                                    className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md hover:shadow-lg transition-shadow`}
-                                    href={project.links[0].url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    />
-                                ) : (
-                                    <div className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md`} />
-                                )}
-                                <p className="text-slate-600 text-sm mb-4 flex-grow">
-                                    {project.description}
-                                </p>
-                                <div className="flex flex-wrap gap-2 mt-auto">
-                                    {project.tags.map(tag => (
-                                        <Tag key={tag} value={tag} />
-                                    ))}
-                                </div>
+                                    <Card.Heading className="text-center">
+                                    {project.title}
+                                    </Card.Heading>
+                                    {project.links.length > 0 ? (
+                                        <a
+                                        title={project.links[0].title}
+                                        className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md hover:shadow-lg transition-shadow`}
+                                        href={project.links[0].url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        />
+                                    ) : (
+                                        <div className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md`} />
+                                    )}
+                                    <p className="text-slate-600 text-sm mb-4">
+                                        {project.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                        {project.tags.map(tag => (
+                                            <Tag key={tag} value={tag} />
+                                        ))}
+                                    </div>
                                 </div>
                             </Card.Root>
                         </div>
