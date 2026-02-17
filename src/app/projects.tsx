@@ -85,17 +85,27 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsVisible, setItemsVisible] = useState(1);
   
-  // Update items visible based on screen width
+  // Update items visible based on screen width using matchMedia
   useEffect(() => {
-    const handleResize = () => {
-        setItemsVisible(window.innerWidth >= 768 ? 3 : 1);
+    const mediaQueryMd = window.matchMedia("(min-width: 768px)");
+
+    const handleBreakpointChange = () => {
+        if (mediaQueryMd.matches) {
+          setItemsVisible(3); // Desktop/Tablet: 3 projects
+        } else {
+          setItemsVisible(1); // Mobile: 1 project
+        }
     };
     
     // Set initial
-    handleResize();
+    handleBreakpointChange();
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // Add listeners for breakpoint changes
+    mediaQueryMd.addEventListener("change", handleBreakpointChange);
+
+    return () => {
+      mediaQueryMd.removeEventListener("change", handleBreakpointChange);
+    };
   }, []);
 
   const totalItems = projectsData.length;
@@ -104,16 +114,19 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   // Example: 5 items, 1 visible. Max index = 4. (Shows 4)
   const maxIndex = Math.max(0, totalItems - itemsVisible);
 
-  const nextProject = () => {
-    if (currentIndex < maxIndex) {
-        setCurrentIndex((prev) => prev + 1);
+  // Clamp currentIndex when screen size changes
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
     }
+  }, [maxIndex, currentIndex]);
+
+  const nextProject = () => {
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
   };
 
   const prevProject = () => {
-    if (currentIndex > 0) {
-        setCurrentIndex((prev) => prev - 1);
-    }
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
 
   // Progress Bar Width and Position
@@ -163,7 +176,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     onClick={prevProject}
-                    className="absolute left-0 zs-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all z-20 hidden md:block -ml-4"
+                    className="absolute left-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all -ml-2 md:-ml-4"
                     aria-label="Previous Project"
                 >
                     <ChevronLeft size={32} />
@@ -174,12 +187,17 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
             {/* Carousel Container */}
             <div className="w-full overflow-hidden py-8 px-1">
                 <motion.div 
-                    className="flex w-[500%] md:w-[166.66%]"
+                    className="flex"
+                    style={{ width: `${(totalItems / itemsVisible) * 100}%` }}
                     animate={{ x: `${-currentIndex * (100 / totalItems)}%` }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     {projectsData.map((project, index) => (
-                        <div key={index} className="w-[20%] px-4 flex-shrink-0">
+                        <div 
+                            key={index} 
+                            className="px-4 flex-shrink-0"
+                            style={{ width: `${100 / totalItems}%` }}
+                        >
                              <Card.Root className="h-full overflow-visible">
                                 <div className="flex flex-col h-full">
                                     <Card.Heading className="text-center">
@@ -219,7 +237,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     onClick={nextProject}
-                    className="absolute right-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all hidden md:block -mr-4"
+                    className="absolute right-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all -mr-2 md:-mr-4"
                     aria-label="Next Project"
                 >
                     <ChevronRight size={32} />
@@ -228,19 +246,6 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
              </AnimatePresence>
         </div>
 
-        {/* Mobile Navigation Dots */}
-         <div className="flex justify-center gap-2 mt-4 md:hidden">
-            {projectsData.map((_, idx) => (
-                <button
-                    key={idx}
-                    onClick={() => setCurrentIndex(Math.min(idx, maxIndex))}
-                    className={`h-2 rounded-full transition-all ${
-                        currentIndex === idx ? "w-8 bg-electric-blue" : "w-2 bg-slate-300"
-                    }`}
-                    aria-label={`Go to project ${idx + 1}`}
-                />
-            ))}
-        </div>
 
         <div className="flex justify-center mt-16">
           <a
