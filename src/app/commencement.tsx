@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
  *  0 = element just entering the bottom of the viewport
  *  1 = element's top has reached `triggerOffset` from the top of the viewport
  */
-function useScrollProgress(triggerOffset = 0.75): [React.RefObject<HTMLDivElement | null>, number] {
+function useScrollProgress(triggerOffset = 0.75): [React.RefObject<HTMLDivElement>, number] {
   const ref = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -65,7 +65,7 @@ const Commencement = () => {
             }}
           >
             <blockquote className="text-2xl md:text-3xl lg:text-4xl font-medium text-slate-300 italic leading-relaxed font-sans">
-              "Engineering is not just about following steps to get an answer on a test.
+              &ldquo;Engineering is not just about following steps to get an answer on a test.
             </blockquote>
           </div>
 
@@ -86,7 +86,7 @@ const Commencement = () => {
               <span className="text-amber-300 font-semibold not-italic">
                 using what is available to come to a solution.
               </span>
-              "
+              &rdquo;
             </blockquote>
           </div>
         </div>
