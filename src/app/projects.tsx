@@ -38,6 +38,13 @@ const ChevronRight = ({ size = 24, className = "" }) => (
 
 const projectsData = [
   {
+    title: "Poker Bot Using RL",
+    imageClass: "pokerBot",
+    description: "Developed a recurrent Reinforcement Learning agent for No-Limit Texas Hold 'em. Combined a mathematical Equity Model and a human-behavior Imitation Model (pre-trained on 10M+ hands) to train an advanced LSTM network for decision making and dynamic bet sizing.",
+    tags: ["Python", "PyTorch", "Reinforcement Learning", "LSTM", "PPO"],
+    links: [{ url: "/Poker_Bot_using_RL.pdf", title: "Project Report PDF" }]
+  },
+  {
     title: "Pneumonia Detection CNN",
     imageClass: "xrays",
     description: "Architected CNN models to detect pneumonia in pediatric chest X-rays, achieving ~91% accuracy. Optimized for both GPU and CPU environments.",

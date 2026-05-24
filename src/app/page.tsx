@@ -3,6 +3,7 @@ import Header from "./header";
 import MenuBar from "./menubar";
 import Resume from "./resume";
 import AboutMe from "./aboutMe";
+import Commencement from "./commencement";
 import Footer from "./footer";
 import { useEffect, useRef, useState } from "react";
 import Projects from "./projects";
@@ -27,6 +28,7 @@ export default function Home() {
         ]}
       />
       <Header ref={headerRef} />
+      <Commencement />
 
       <AboutMe ref={aboutMeRef} />
       <Resume />

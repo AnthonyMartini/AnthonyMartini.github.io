@@ -40,7 +40,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                 </h2>
                 
                 <p className="text-slate-600 leading-relaxed font-sans text-lg mb-6">
-                  I&apos;m a <BB>Computer Engineering</BB> student at the <BB>University of South Florida</BB>. I am passionate about learning and building applications, the tools come second.
+                  I&apos;m a <BB>Computer Engineering</BB> graduate from the <BB>University of South Florida</BB>. I am passionate about learning and building applications, the tools come second.
                 </p>
                 
                 <div className="space-y-3 text-slate-600 leading-relaxed font-sans text-base">

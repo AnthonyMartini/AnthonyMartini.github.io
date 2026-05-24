@@ -187,6 +187,56 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                     </div>
                 </div>
                 </Card.Root>
+
+                {/* Currently Building - Velocity Canvas */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="relative rounded-xl overflow-hidden border border-teal-400/40 shadow-lg shadow-teal-500/10 group hover:-translate-y-1 transition-all duration-300">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0c1824] via-[#0e222e] to-[#142e2e]" />
+                    <div className="absolute inset-0 bg-grid-pattern opacity-[0.06]" />
+                    <div className="absolute -top-10 -right-10 w-48 h-48 bg-teal-400/20 rounded-full blur-3xl pointer-events-none group-hover:bg-teal-400/30 transition-all duration-500" />
+
+                    <div className="relative z-10 p-5">
+                      <div className="flex items-center gap-4">
+                        <img
+                          src="/img/VelocityCanvas.png"
+                          alt="Velocity Canvas"
+                          className="w-12 h-12 object-contain flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-400"></span>
+                            </span>
+                            <span className="text-xs font-bold uppercase tracking-widest text-teal-300 font-mono">Currently Building</span>
+                          </div>
+                          <h3 className="text-lg font-bold font-terminal text-white leading-tight">
+                            Velocity Canvas
+                          </h3>
+                          <p className="text-slate-300/80 text-xs font-mono mt-0.5">AI-Powered Microsoft Power Apps Builder</p>
+                        </div>
+                        <a
+                          href="https://velocitycanvas.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-400/20 hover:bg-teal-400/35 border border-teal-400/30 hover:border-teal-400/60 text-teal-300 hover:text-white text-xs font-semibold transition-all duration-200"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                          velocitycanvas.com
+                        </a>
+                      </div>
+
+                      <p className="text-sm text-slate-300/80 mt-4 leading-relaxed">
+                        An AI-driven Next.js application that converts natural-language prompts into functional Power Apps components and screens, with a custom compiler that outputs deployable Power Apps YAML.
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
             </div>
           </div>
 
@@ -204,7 +254,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                           <p className="font-bold text-slate-800">B.S. in Computer Engineering</p>
                           <p className="text-sm">Minor in Mathematics, Honors College</p>
                           <p className="text-electric-blue mt-2 font-mono text-sm">
-                              May 2026
+                              Graduated: May 2026
                           </p>
                            <p className="text-sm mt-1 font-semibold">GPA: 4.0/4.0</p>
                       </div>
