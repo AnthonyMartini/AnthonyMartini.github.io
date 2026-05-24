@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     description: "Portfolio of Anthony Martini, specializing in software engineering, AI applications, and full-stack systems.",
     images: ["/img/pfp.jpg"],
   },
+  verification: {
+    google: "0KMWUSdoyMtr5Zoj_O01ywzMQuALvpl4mldBB4793bs",
+  },
 };
 
 export default function RootLayout({
