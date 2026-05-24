@@ -58,21 +58,26 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
+          aria-label="Anthony Martini"
         >
-          {text.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: index * 0.1, duration: 0.1 }}
-            >
-              {char}
-            </motion.span>
-          ))}
+          <span className="sr-only">Anthony Martini</span>
+          <span aria-hidden="true">
+            {text.split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.1, duration: 0.1 }}
+              >
+                {char}
+              </motion.span>
+            ))}
+          </span>
           <motion.span
             animate={{ opacity: [0, 1, 0] }}
             transition={{ repeat: Infinity, duration: 0.8 }}
             className="inline-block w-4 h-[0.8em] bg-electric-blue ml-2 align-middle"
+            aria-hidden="true"
           />
         </motion.h1>
 

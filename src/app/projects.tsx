@@ -217,9 +217,15 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
                                         href={project.links[0].url}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        role="img"
+                                        aria-label={`${project.title} - Project Link`}
                                         />
                                     ) : (
-                                        <div className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md`} />
+                                        <div 
+                                          className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md`} 
+                                          role="img"
+                                          aria-label={`${project.title} - Project Showcase`}
+                                        />
                                     )}
                                     <p className="text-slate-600 text-sm mb-4">
                                         {project.description}

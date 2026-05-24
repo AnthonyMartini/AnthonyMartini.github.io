@@ -23,7 +23,11 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         <div className="flex justify-center order-1 md:order-2 md:col-span-2">
             <div className="relative group w-64 h-64 md:w-80 md:h-80">
                 <div className="absolute inset-0 bg-electric-blue rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                <div className="relative w-full h-full pfp rounded-full border-4 border-white shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-105" />
+                <img 
+                  src="/img/pfp.jpg"
+                  alt="Anthony Martini - Computer Engineering Graduate & Software Engineer"
+                  className="relative w-full h-full rounded-full border-4 border-white shadow-2xl overflow-hidden transition-transform duration-500 group-hover:scale-105 object-cover"
+                />
                 <div className="absolute -bottom-2 -right-2 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-mono text-slate-600 shadow-lg border border-slate-200 transform rotate-[-6deg] hover:rotate-0 transition-transform duration-300 z-20">
                     📍 This is me in Rishikesh, India!
                 </div>
@@ -36,7 +40,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-electric-blue to-transparent opacity-50" />
                 
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
-                  Hello! 
+                  Hello! I&apos;m Anthony Martini.
                 </h2>
                 
                 <p className="text-slate-600 leading-relaxed font-sans text-lg mb-6">
