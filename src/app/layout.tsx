@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://anthonymartini.github.io"),
   title: "Anthony Martini | Computer Engineer & Software Developer",
   description: "Portfolio of Anthony Martini, a Computer Engineering graduate from the University of South Florida. Specialized in software engineering, AI, and full-stack development.",
-  keywords: ["Anthony Martini", "Computer Engineer", "Software Engineer", "University of South Florida", "Power Apps Developer", "Tampa", "USF"],
+  keywords: ["Anthony Martini", "Tony Martini", "Tony", "Computer Engineer", "Software Engineer", "University of South Florida", "Power Apps Developer", "Tampa", "USF"],
   icons: {
     icon: "/favicon_light.svg",
   },
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     siteName: "Anthony Martini Portfolio",
     images: [
       {
-        url: "/img/pfp.jpg",
-        width: 800,
-        height: 800,
+        url: "/img/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "Anthony Martini Profile Photo",
       },
     ],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anthony Martini | Computer Engineer & Software Developer",
     description: "Portfolio of Anthony Martini, specializing in software engineering, AI applications, and full-stack systems.",
-    images: ["/img/pfp.jpg"],
+    images: ["/img/og-image.png"],
   },
   verification: {
     google: "0KMWUSdoyMtr5Zoj_O01ywzMQuALvpl4mldBB4793bs",
