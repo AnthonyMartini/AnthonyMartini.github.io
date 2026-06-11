@@ -11,24 +11,25 @@ import Projects from "./projects";
 export default function Home() {
   const [rerender, setRerender] = useState(false);
   const headerRef = useRef<null | HTMLDivElement>(null);
+  const commencementRef = useRef<null | HTMLDivElement>(null);
   const aboutMeRef = useRef<null | HTMLDivElement>(null);
   const projectsRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
     setRerender((r) => !r);
   }, []);
-  console.log(aboutMeRef.current);
   return (
     <div className="static w-full">
       <MenuBar
         refs={[
           { name: "Home", ref: headerRef },
+          { name: "Speech", ref: commencementRef },
           { name: "Resume", ref: aboutMeRef },
           { name: "Projects", ref: projectsRef },
         ]}
       />
       <Header ref={headerRef} />
-      <Commencement />
+      <Commencement ref={commencementRef} />
 
       <AboutMe ref={aboutMeRef} />
       <Resume />

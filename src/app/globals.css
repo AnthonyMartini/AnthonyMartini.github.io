@@ -4,9 +4,10 @@
 
 @font-face {
   font-family: "TerminalGrotesque";
-  src: url("/fonts/terminal-grotesque.ttf") format("truetype");
+  src: url("/fonts/terminal-grotesque_open.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -16,12 +17,21 @@
   /* Slate 50 */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
   cursor: default;
   /* Reverting custom cursor for cleaner feel */
   overflow-x: hidden;
+}
+
+::selection {
+  background: #2563eb;
+  color: #fff;
 }
 
 .text-glow {
@@ -33,7 +43,60 @@ body {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 4px 12px -2px rgba(15, 23, 42, 0.06),
+    0 12px 32px -8px rgba(15, 23, 42, 0.08);
+}
+
+/* Grid that fades out toward the edges — used in the hero */
+.grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 40%, transparent 100%);
+}
+
+/* Sweeping shine for primary CTAs */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(105deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-shine:hover::after {
+  left: 125%;
+}
+
+/* Floating ember particles for the speech section */
+@keyframes ember {
+  0%, 100% {
+    transform: translateY(0) translateX(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) translateX(10px) scale(1.2);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: var(--p-op, 0.4);
+  }
+  50% {
+    opacity: calc(var(--p-op, 0.4) * 0.25);
+  }
 }
 
 /* Legacy Classes (Keeping for compatibility during refactor) */
@@ -227,20 +290,6 @@ body {
   background-image: url(/img/NextStep.png);
 }
 
-.LinkedIn {
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-image: url(/img/li.png);
-}
-
-.GitHub {
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-  background-image: url(/img/gh.png);
-}
-
 .menuBar {
   transition: all 0.3s;
 }
@@ -255,20 +304,20 @@ body {
   }
 }
 
-/* Scrollbar */
+/* Scrollbar — light theme to match the site */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #004411;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--neon-green);
+  background: #2563eb;
 }

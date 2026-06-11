@@ -26,6 +26,8 @@ const config: Config = {
       animation: {
         'scanline': 'scanline 8s linear infinite',
         'blink': 'blink 1s step-end infinite',
+        'float-slow': 'drift 18s ease-in-out infinite',
+        'float-slower': 'drift 26s ease-in-out infinite reverse',
       },
       keyframes: {
         scanline: {
@@ -35,6 +37,11 @@ const config: Config = {
         blink: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0' },
+        },
+        drift: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(40px, -30px) scale(1.08)' },
+          '66%': { transform: 'translate(-30px, 25px) scale(0.95)' },
         },
       },
     },

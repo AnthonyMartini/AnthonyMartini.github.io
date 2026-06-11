@@ -152,19 +152,25 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
       
       <div className="w-full max-w-[90vw] z-10 flex flex-col">
-        <motion.h1 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-terminal text-slate-800 text-center mb-12"
+          className="flex flex-col items-center mb-12"
         >
-          Featured Projects_
-        </motion.h1>
+          <span className="font-mono text-xs tracking-[0.3em] uppercase text-electric-blue mb-2">
+            04 / portfolio
+          </span>
+          <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center">
+            Featured Projects_
+          </h1>
+          <div className="mt-4 h-px w-16 bg-gradient-to-r from-transparent via-electric-blue to-transparent" />
+        </motion.div>
 
         {/* Progress Bar */}
-        <div className="w-full max-w-3xl mx-auto mb-4 h-2 bg-slate-200 rounded-full overflow-hidden relative">
-          <motion.div 
-            className="h-full bg-electric-blue absolute top-0 left-0"
+        <div className="w-full max-w-3xl mx-auto mb-4 h-1.5 bg-slate-200 rounded-full overflow-hidden relative">
+          <motion.div
+            className="h-full bg-gradient-to-r from-electric-blue to-indigo-500 rounded-full absolute top-0 left-0"
             initial={{ left: 0 }}
             animate={{ 
                 left: `${indicatorLeft}%`,
@@ -212,20 +218,26 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
                                     </Card.Heading>
                                     {project.links.length > 0 ? (
                                         <a
-                                        title={project.links[0].title}
-                                        className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md hover:shadow-lg transition-shadow`}
-                                        href={project.links[0].url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        role="img"
-                                        aria-label={`${project.title} - Project Link`}
-                                        />
+                                          title={project.links[0].title}
+                                          className="w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                                          href={project.links[0].url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                        >
+                                          <div
+                                            className={`projectImage ${project.imageClass} w-full h-full transition-transform duration-500 group-hover:scale-[1.04]`}
+                                            role="img"
+                                            aria-label={`${project.title} - Project Link`}
+                                          />
+                                        </a>
                                     ) : (
-                                        <div 
-                                          className={`projectImage ${project.imageClass} w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md`} 
-                                          role="img"
-                                          aria-label={`${project.title} - Project Showcase`}
-                                        />
+                                        <div className="w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md">
+                                          <div
+                                            className={`projectImage ${project.imageClass} w-full h-full transition-transform duration-500 group-hover:scale-[1.04]`}
+                                            role="img"
+                                            aria-label={`${project.title} - Project Showcase`}
+                                          />
+                                        </div>
                                     )}
                                     <p className="text-slate-600 text-sm mb-4">
                                         {project.description}
@@ -265,7 +277,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
             href="https://github.com/AnthonyMartini"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-mono font-medium tracking-tighter text-white bg-slate-900 rounded-lg group hover:bg-electric-blue transition-colors duration-300 shadow-lg"
+            className="btn-shine group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-mono font-medium tracking-tighter text-white bg-slate-900 rounded-lg hover:bg-electric-blue transition-colors duration-300 shadow-lg hover:shadow-xl hover:shadow-electric-blue/25"
           >
             <span className="relative">Check out my GitHub for more -&gt;</span>
           </a>

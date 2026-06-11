@@ -20,9 +20,14 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
       className="header relative h-screen w-full flex flex-col justify-center items-center overflow-hidden" 
       ref={ref}
     >
-      {/* Background Grid - subtle and dark on light bg */}
-      <div className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-30 pointer-events-none" />
-      
+      {/* Background Grid - subtle, fading toward the edges */}
+      <div className="absolute inset-0 bg-grid-pattern bg-[size:40px_40px] opacity-30 grid-fade pointer-events-none" />
+
+      {/* Soft aurora orbs drifting behind the content */}
+      <div className="absolute top-1/4 left-1/4 w-[28rem] h-[28rem] bg-electric-blue/15 rounded-full blur-3xl animate-float-slow pointer-events-none" aria-hidden="true" />
+      <div className="absolute bottom-1/4 right-1/4 w-[24rem] h-[24rem] bg-indigo-400/15 rounded-full blur-3xl animate-float-slower pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/2 right-1/3 w-72 h-72 bg-teal-300/10 rounded-full blur-3xl animate-float-slow pointer-events-none" aria-hidden="true" />
+
       {/* Main Content */}
       <div className="z-10 text-center px-4 relative">
         <div className="h-8 mb-4"> {/* Fixed height container to prevent layout shift */}
@@ -54,7 +59,7 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
         </div>
         
         <motion.h1
-          className="text-6xl md:text-8xl lg:text-9xl font-terminal text-slate-900 tracking-tighter"
+          className="text-6xl md:text-8xl lg:text-9xl font-terminal tracking-tighter bg-gradient-to-br from-slate-900 via-slate-800 to-electric-blue/80 bg-clip-text text-transparent pb-2"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -87,10 +92,10 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
            transition={{ delay: 2.0, duration: 0.5 }}
            className="mt-12 flex flex-col items-center gap-6"
         >
-            <a 
-              href="/Resume.pdf" 
-              download 
-              className="px-8 py-3 rounded-md bg-slate-900 text-white font-mono hover:bg-electric-blue transition-colors duration-300 shadow-lg hover:shadow-xl"
+            <a
+              href="/Resume.pdf"
+              download
+              className="btn-shine px-8 py-3 rounded-md bg-slate-900 text-white font-mono hover:bg-electric-blue transition-colors duration-300 shadow-lg hover:shadow-xl hover:shadow-electric-blue/25"
             >
                 Download Resume
             </a>
@@ -122,6 +127,32 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
             </div>
         </motion.div>
       </div>
+
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.6, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-400 pointer-events-none"
+        aria-hidden="true"
+      >
+        <span className="font-mono text-[10px] tracking-[0.3em] uppercase">scroll</span>
+        <motion.svg
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </motion.svg>
+      </motion.div>
     </div>
   );
 });

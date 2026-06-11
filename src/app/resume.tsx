@@ -1,7 +1,7 @@
 "use client";
 import React, { forwardRef, LegacyRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Card, Tag } from "./card"; 
+import { Card, Tag, SectionTitle } from "./card";
 
 const ChevronDown = ({ className = "" }) => (
     <svg 
@@ -149,9 +149,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
 
           {/* Left Column: Work Experience */}
           <div className="flex-1 min-w-[300px]">
-            <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
-              Experience
-            </h1>
+            <SectionTitle eyebrow="01 / career">Experience</SectionTitle>
 
             <div className="space-y-8">
                 {/* P&G Consolidated Expandable */}
@@ -244,9 +242,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
           <div className="flex-1 min-w-[300px] space-y-12">
             {/* Education Block */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
-                Education
-              </h1>
+              <SectionTitle eyebrow="02 / academics">Education</SectionTitle>
               <Card.Root logoClass="USF">
                   <Card.Heading>University of South Florida</Card.Heading>
                   <div className="flex w-full flex-row flex-wrap text-slate-600">
@@ -271,9 +267,7 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
 
             {/* Achievements & Skills Block */}
             <div>
-              <h1 className="text-3xl md:text-4xl font-terminal text-slate-800 text-center mb-8">
-                Achievements & Skills
-              </h1>
+              <SectionTitle eyebrow="03 / highlights">Achievements & Skills</SectionTitle>
 
               {/* Achievements */}
               <div className="flex flex-row gap-4 mb-8 justify-center">
