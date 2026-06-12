@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const titles = ["Software Engineer", "Power Apps Developer", "UX/UI Enthusiast", "Automation Specialist", "Full Stack Developer"];
 
-const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
+const Header = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
   const text = "Anthony Martini";
   const [index, setIndex] = useState(0);
 
@@ -16,8 +16,9 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
   }, []);
 
   return (
-    <div 
-      className="header relative h-screen w-full flex flex-col justify-center items-center overflow-hidden" 
+    <header
+      id="home"
+      className="header relative h-screen w-full flex flex-col justify-center items-center overflow-hidden"
       ref={ref}
     >
       {/* Background Grid - subtle, fading toward the edges */}
@@ -114,7 +115,7 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/in/anthony-martini-b5a8b6256/"
+                href="https://www.linkedin.com/in/anthony-martini/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-600 hover:text-electric-blue transition-colors duration-300"
@@ -153,7 +154,7 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
           <path d="m6 9 6 6 6-6" />
         </motion.svg>
       </motion.div>
-    </div>
+    </header>
   );
 });
 

@@ -10,10 +10,10 @@ import Projects from "./projects";
 
 export default function Home() {
   const [rerender, setRerender] = useState(false);
-  const headerRef = useRef<null | HTMLDivElement>(null);
-  const commencementRef = useRef<null | HTMLDivElement>(null);
-  const aboutMeRef = useRef<null | HTMLDivElement>(null);
-  const projectsRef = useRef<null | HTMLDivElement>(null);
+  const headerRef = useRef<null | HTMLElement>(null);
+  const commencementRef = useRef<null | HTMLElement>(null);
+  const aboutMeRef = useRef<null | HTMLElement>(null);
+  const projectsRef = useRef<null | HTMLElement>(null);
 
   useEffect(() => {
     setRerender((r) => !r);
@@ -22,18 +22,20 @@ export default function Home() {
     <div className="static w-full">
       <MenuBar
         refs={[
-          { name: "Home", ref: headerRef },
-          { name: "Speech", ref: commencementRef },
-          { name: "Resume", ref: aboutMeRef },
-          { name: "Projects", ref: projectsRef },
+          { name: "Home", id: "home", ref: headerRef },
+          { name: "Speech", id: "speech", ref: commencementRef },
+          { name: "Resume", id: "resume", ref: aboutMeRef },
+          { name: "Projects", id: "projects", ref: projectsRef },
         ]}
       />
-      <Header ref={headerRef} />
-      <Commencement ref={commencementRef} />
+      <main>
+        <Header ref={headerRef} />
+        <Commencement ref={commencementRef} />
 
-      <AboutMe ref={aboutMeRef} />
-      <Resume />
-      <Projects ref={projectsRef} />
+        <AboutMe ref={aboutMeRef} />
+        <Resume />
+        <Projects ref={projectsRef} />
+      </main>
 
       <Footer />
     </div>

@@ -2,10 +2,11 @@
 import React, { forwardRef, LegacyRef } from "react";
 import { motion } from "framer-motion";
 
-const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
+const AboutMe = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
   return (
-    <div
-      id="about-me-section"
+    <section
+      id="resume"
+      aria-label="About Anthony Martini"
       className="relative py-20 px-4 min-h-[600px] flex flex-col items-center justify-center overflow-hidden bg-slate-50"
       ref={ref}
     >
@@ -70,7 +71,7 @@ const AboutMe = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
 
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 });
 

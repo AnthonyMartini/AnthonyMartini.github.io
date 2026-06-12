@@ -7,8 +7,8 @@ import { SectionTitle } from "./card";
  *  0 = element just entering the bottom of the viewport
  *  1 = element's top has reached `triggerOffset` from the top of the viewport
  */
-function useScrollProgress(triggerOffset = 0.75): [React.RefObject<HTMLDivElement>, number] {
-  const ref = useRef<HTMLDivElement>(null);
+function useScrollProgress(triggerOffset = 0.75): [React.RefObject<HTMLElement>, number] {
+  const ref = useRef<HTMLElement>(null);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -76,12 +76,12 @@ const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
   opacity: 0.25 + ((i * 13) % 30) / 100,
 }));
 
-const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLDivElement>) => {
+const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLElement>) => {
   const [sectionRef, progress] = useScrollProgress(0.55);
 
   // Attach both the internal scroll-progress ref and the forwarded nav ref
-  const setRefs = (el: HTMLDivElement | null) => {
-    (sectionRef as React.MutableRefObject<HTMLDivElement | null>).current = el;
+  const setRefs = (el: HTMLElement | null) => {
+    (sectionRef as React.MutableRefObject<HTMLElement | null>).current = el;
     if (typeof forwardedRef === "function") forwardedRef(el);
     else if (forwardedRef) forwardedRef.current = el;
   };
@@ -120,7 +120,9 @@ const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLDiv
     });
 
   return (
-    <div
+    <section
+      id="speech"
+      aria-label="USF Commencement Speech"
       ref={setRefs}
       className="relative pt-16 pb-16 px-4 min-h-[80vh] flex flex-col items-center justify-start overflow-hidden bg-slate-950 text-slate-100"
     >
@@ -287,7 +289,7 @@ const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLDiv
         </div>
 
       </div>
-    </div>
+    </section>
   );
 });
 

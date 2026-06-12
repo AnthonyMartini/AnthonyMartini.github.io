@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <div id="footer" className="w-full py-8 flex flex-col justify-center items-center text-sm text-slate-500 bg-slate-50 border-t border-slate-200 gap-4">
+    <footer id="footer" className="w-full py-8 flex flex-col justify-center items-center text-sm text-slate-500 bg-slate-50 border-t border-slate-200 gap-4">
       <div className="flex gap-6 items-center">
         <a
           href="https://github.com/AnthonyMartini/"
@@ -31,6 +31,6 @@ export default function Footer() {
         <p>© 2026 Anthony Martini</p>
         <p className="font-mono text-xs text-slate-400 mt-1">Designed & built with Next.js + Tailwind</p>
       </div>
-    </div>
+    </footer>
   );
 }

@@ -80,12 +80,12 @@ export const SectionTitle = ({
           {eyebrow}
         </span>
       )}
-      <h1 className={cn(
+      <h2 className={cn(
         "text-3xl md:text-4xl font-terminal text-center",
         dark ? "text-slate-100" : "text-slate-800"
       )}>
         {children}
-      </h1>
+      </h2>
       <div className={cn(
         "mt-3 h-px w-16 bg-gradient-to-r from-transparent to-transparent",
         dark ? "via-emerald-400" : "via-electric-blue"

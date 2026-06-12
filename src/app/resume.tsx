@@ -127,9 +127,10 @@ const ExpandablePGCard = () => {
     );
 };
 
-const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
+const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
   return (
-    <div
+    <section
+      aria-label="Experience, Education, and Skills"
       className="relative p-4 md:p-8 flex flex-col items-center pt-20 pb-20 min-h-screen bg-slate-50"
       ref={ref}
     >
@@ -356,8 +357,8 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLDivElement>) => {
 
         </div>
       </motion.div>
-    </div>
-    
+    </section>
+
   );
 });
 Resume.displayName = "Resume";

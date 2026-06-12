@@ -88,7 +88,7 @@ const projectsData = [
   }
 ];
 
-const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsVisible, setItemsVisible] = useState(1);
   
@@ -145,7 +145,9 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
   const indicatorLeft = (currentIndex / totalPages) * 100;
 
   return (
-    <div
+    <section
+      id="projects"
+      aria-label="Featured Projects"
       className="relative p-4 md:p-8 flex flex-col items-center pt-20 pb-20 w-full min-h-screen bg-slate-50 overflow-hidden"
       ref={ref}
     >
@@ -161,9 +163,9 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
           <span className="font-mono text-xs tracking-[0.3em] uppercase text-electric-blue mb-2">
             04 / portfolio
           </span>
-          <h1 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center">
+          <h2 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center">
             Featured Projects_
-          </h1>
+          </h2>
           <div className="mt-4 h-px w-16 bg-gradient-to-r from-transparent via-electric-blue to-transparent" />
         </motion.div>
 
@@ -283,7 +285,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 });
 Projects.displayName = "Projects";

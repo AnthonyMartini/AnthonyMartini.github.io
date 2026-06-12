@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const MenuBar = ({
   refs,
 }: {
-  refs: { name: string; ref: React.RefObject<HTMLDivElement> }[];
+  refs: { name: string; id: string; ref: React.RefObject<HTMLElement> }[];
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -49,7 +49,8 @@ const MenuBar = ({
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
       <AnimatePresence>
         {isVisible && (
-          <motion.div
+          <motion.nav
+            aria-label="Section navigation"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 100, opacity: 0 }}
@@ -60,8 +61,9 @@ const MenuBar = ({
             )}
           >
             {refs.map((item, i) => (
-              <motion.div
+              <motion.a
                 key={item.name}
+                href={`#${item.id}`}
                 whileTap={{ scale: 0.95 }}
                 className={cn(
                   "relative cursor-pointer text-sm md:text-base font-medium px-3 md:px-4 py-1.5 rounded-full transition-colors duration-200",
@@ -69,12 +71,14 @@ const MenuBar = ({
                     ? "text-electric-blue"
                     : "text-slate-600 hover:text-slate-900"
                 )}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   if (item.ref?.current) {
                     item.ref.current.scrollIntoView({
                       behavior: "smooth",
                       block: "start",
                     });
+                    window.history.replaceState(null, "", `#${item.id}`);
                   }
                 }}
               >
@@ -86,9 +90,9 @@ const MenuBar = ({
                   />
                 )}
                 <span className="relative z-10">{item.name}</span>
-              </motion.div>
+              </motion.a>
             ))}
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
     </div>
