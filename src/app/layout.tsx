@@ -1,15 +1,22 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#f8fafc",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://anthonymartini.github.io"),
-  title: "Anthony Martini | Computer Engineer & Software Developer",
-  description: "Portfolio of Anthony Martini — USF Computer Engineering graduate (4.0 GPA, Honors College), 138th Commencement student speaker, and software engineer specializing in AI, full-stack development, and Microsoft Power Platform.",
-  keywords: ["Anthony Martini", "Tony Martini", "Tony", "Computer Engineer", "Software Engineer", "University of South Florida", "USF Commencement Speaker", "Power Apps Developer", "Power Platform", "Machine Learning", "Tampa", "USF", "Velocity Canvas"],
+  title: "Anthony Martini | Software Engineer & AI Graduate Student",
+  description: "Portfolio of Anthony Martini — USF Computer Engineering graduate (4.0 GPA, Honors College), 138th Commencement student speaker, incoming MSAI student at USF Bellini College, and software engineer specializing in AI, full-stack development, and Microsoft Power Platform.",
+  keywords: ["Anthony Martini", "Tony Martini", "Tony", "Computer Engineer", "Software Engineer", "University of South Florida", "USF Commencement Speaker", "Power Apps Developer", "Power Platform", "Machine Learning", "Artificial Intelligence", "MSAI", "MS in Artificial Intelligence", "Bellini College", "Tampa", "USF", "Velocity Canvas"],
   alternates: {
     canonical: "/",
   },
@@ -30,8 +37,8 @@ export const metadata: Metadata = {
     icon: "/favicon_light.svg",
   },
   openGraph: {
-    title: "Anthony Martini | Computer Engineer & Software Developer",
-    description: "Portfolio of Anthony Martini, specializing in software engineering, AI applications, and full-stack systems.",
+    title: "Anthony Martini | Software Engineer & AI Graduate Student",
+    description: "Portfolio of Anthony Martini, specializing in software engineering, AI applications, and full-stack systems. Incoming MSAI student at USF Bellini College.",
     url: "https://anthonymartini.github.io",
     siteName: "Anthony Martini Portfolio",
     images: [
@@ -47,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anthony Martini | Computer Engineer & Software Developer",
+    title: "Anthony Martini | Software Engineer & AI Graduate Student",
     description: "Portfolio of Anthony Martini, specializing in software engineering, AI applications, and full-stack systems.",
     images: ["/img/og-image.png"],
   },
@@ -94,12 +101,21 @@ export default function RootLayout({
                   "alternateName": ["Tony Martini"],
                   "givenName": "Anthony",
                   "familyName": "Martini",
-                  "jobTitle": "Software Engineer & Power Platform Developer",
-                  "description": "Computer Engineering graduate from the University of South Florida (4.0 GPA, Honors College) and student speaker at USF's 138th Commencement. Software engineer specializing in AI, machine learning, full-stack development, and the Microsoft Power Platform.",
+                  "jobTitle": "Software Engineer & AI Graduate Student",
+                  "description": "Computer Engineering graduate from the University of South Florida (4.0 GPA, Honors College), student speaker at USF's 138th Commencement, and incoming MS in Artificial Intelligence student at USF's Bellini College of AI, Cybersecurity and Computing. Specializing in AI, machine learning, full-stack development, and the Microsoft Power Platform.",
                   "alumniOf": {
                     "@type": "CollegeOrUniversity",
                     "name": "University of South Florida",
                     "sameAs": "https://www.usf.edu/"
+                  },
+                  "hasCredential": {
+                    "@type": "EducationalOccupationalCredential",
+                    "credentialCategory": "degree",
+                    "name": "Master of Science in Artificial Intelligence",
+                    "recognizedBy": {
+                      "@type": "CollegeOrUniversity",
+                      "name": "USF Bellini College of Artificial Intelligence, Cybersecurity, and Computing"
+                    }
                   },
                   "worksFor": {
                     "@type": "Organization",

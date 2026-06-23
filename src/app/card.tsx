@@ -20,14 +20,14 @@ const Root = ({ children, className, logoClass }: { children: ReactNode; classNa
         <>
           <div
             className={cn(
-               "absolute top-8 right-4 w-64 h-64 bg-no-repeat bg-center bg-contain opacity-[0.15] pointer-events-none transform rotate-[15deg] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[20deg]",
-               logoClass
+              "absolute top-8 right-4 w-64 h-64 bg-no-repeat bg-center bg-contain opacity-[0.15] pointer-events-none transform rotate-[15deg] transition-transform duration-500 group-hover:scale-105 group-hover:rotate-[20deg]",
+              logoClass
             )}
           />
           {/* White film overlay for extra subtlety if needed, though opacity handles most of it.
               The user asked for "masked over with a white film".
               Let's add a subtle gradient overlay to ensure text readability. */}
-           <div className="absolute inset-0 bg-white/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-white/40 pointer-events-none" />
         </>
       )}
 
@@ -58,28 +58,18 @@ const Heading = ({
 
 export const Card = { Root, Heading };
 
-/** Consistent section header: mono eyebrow + terminal heading + gradient underline */
+/** Consistent section header: terminal heading + gradient underline */
 export const SectionTitle = ({
-  eyebrow,
   children,
   className,
   dark = false,
 }: {
-  eyebrow?: string;
   children: ReactNode;
   className?: string;
   dark?: boolean;
 }) => {
   return (
     <div className={cn("flex flex-col items-center mb-8", className)}>
-      {eyebrow && (
-        <span className={cn(
-          "font-mono text-xs tracking-[0.3em] uppercase mb-2",
-          dark ? "text-emerald-400" : "text-electric-blue"
-        )}>
-          {eyebrow}
-        </span>
-      )}
       <h2 className={cn(
         "text-3xl md:text-4xl font-terminal text-center",
         dark ? "text-slate-100" : "text-slate-800"

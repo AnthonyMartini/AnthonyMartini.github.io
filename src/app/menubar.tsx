@@ -66,7 +66,7 @@ const MenuBar = ({
                 href={`#${item.id}`}
                 whileTap={{ scale: 0.95 }}
                 className={cn(
-                  "relative cursor-pointer text-sm md:text-base font-medium px-3 md:px-4 py-1.5 rounded-full transition-colors duration-200",
+                  "relative cursor-pointer text-xs sm:text-sm md:text-base font-medium px-2 sm:px-3 md:px-4 py-1.5 rounded-full transition-colors duration-200",
                   i === activeIndex
                     ? "text-electric-blue"
                     : "text-slate-600 hover:text-slate-900"

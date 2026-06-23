@@ -31,7 +31,7 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
 
       {/* Main Content */}
       <div className="z-10 text-center px-4 relative">
-        <div className="h-8 mb-4"> {/* Fixed height container to prevent layout shift */}
+        <div className="h-10 mb-4 flex items-center justify-center"> {/* Fixed height container to prevent layout shift */}
           <AnimatePresence mode="wait">
             <motion.p 
               key={index}
@@ -60,7 +60,7 @@ const Header = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
         </div>
         
         <motion.h1
-          className="text-6xl md:text-8xl lg:text-9xl font-terminal tracking-tighter bg-gradient-to-br from-slate-900 via-slate-800 to-electric-blue/80 bg-clip-text text-transparent pb-2"
+          className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-terminal tracking-tighter bg-gradient-to-br from-slate-900 via-slate-800 to-electric-blue/80 bg-clip-text text-transparent pb-2"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}

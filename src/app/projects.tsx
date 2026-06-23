@@ -3,36 +3,36 @@ import { ForwardedRef, forwardRef, useState, useEffect } from "react";
 import { Card, Tag } from "./card";
 import { motion, AnimatePresence } from "framer-motion";
 const ChevronLeft = ({ size = 24, className = "" }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
   >
-    <path d="m15 18-6-6 6-6"/>
+    <path d="m15 18-6-6 6-6" />
   </svg>
 );
 
 const ChevronRight = ({ size = 24, className = "" }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
   >
-    <path d="m9 18 6-6-6-6"/>
+    <path d="m9 18 6-6-6-6" />
   </svg>
 );
 
@@ -51,7 +51,7 @@ const projectsData = [
     tags: ["Python", "CNN", "Deep Learning"],
     links: []
   },
-    {
+  {
     title: "NLP Optimization: Vocabulary Reduction",
     imageClass: "nlpOptimization",
     description: "Research paper on LLM vocabulary optimization. Reduced vocab by 13% using NLTK WordNet while improving accuracy to 87.57%.",
@@ -91,19 +91,19 @@ const projectsData = [
 const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsVisible, setItemsVisible] = useState(1);
-  
+
   // Update items visible based on screen width using matchMedia
   useEffect(() => {
     const mediaQueryMd = window.matchMedia("(min-width: 768px)");
 
     const handleBreakpointChange = () => {
-        if (mediaQueryMd.matches) {
-          setItemsVisible(3); // Desktop/Tablet: 3 projects
-        } else {
-          setItemsVisible(1); // Mobile: 1 project
-        }
+      if (mediaQueryMd.matches) {
+        setItemsVisible(3); // Desktop/Tablet: 3 projects
+      } else {
+        setItemsVisible(1); // Mobile: 1 project
+      }
     };
-    
+
     // Set initial
     handleBreakpointChange();
 
@@ -152,7 +152,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
       ref={ref}
     >
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
-      
+
       <div className="w-full max-w-[90vw] z-10 flex flex-col">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -160,11 +160,8 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
           viewport={{ once: true }}
           className="flex flex-col items-center mb-12"
         >
-          <span className="font-mono text-xs tracking-[0.3em] uppercase text-electric-blue mb-2">
-            04 / portfolio
-          </span>
           <h2 className="text-4xl md:text-6xl font-terminal text-slate-800 text-center">
-            Featured Projects_
+            Featured Projects
           </h2>
           <div className="mt-4 h-px w-16 bg-gradient-to-r from-transparent via-electric-blue to-transparent" />
         </motion.div>
@@ -174,103 +171,103 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
           <motion.div
             className="h-full bg-gradient-to-r from-electric-blue to-indigo-500 rounded-full absolute top-0 left-0"
             initial={{ left: 0 }}
-            animate={{ 
-                left: `${indicatorLeft}%`,
-                width: `${indicatorWidth}%` 
+            animate={{
+              left: `${indicatorLeft}%`,
+              width: `${indicatorWidth}%`
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
         </div>
 
         <div className="relative w-full flex items-center justify-center">
-            {/* Left Navigate Button */}
-            <AnimatePresence>
+          {/* Left Navigate Button */}
+          <AnimatePresence>
             {currentIndex > 0 && (
-                <motion.button 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    onClick={prevProject}
-                    className="absolute left-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all -ml-2 md:-ml-4"
-                    aria-label="Previous Project"
-                >
-                    <ChevronLeft size={32} />
-                </motion.button>
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                onClick={prevProject}
+                className="absolute left-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all -ml-2 md:-ml-4"
+                aria-label="Previous Project"
+              >
+                <ChevronLeft size={32} />
+              </motion.button>
             )}
-            </AnimatePresence>
+          </AnimatePresence>
 
-            {/* Carousel Container */}
-            <div className="w-full overflow-hidden py-8 px-1">
-                <motion.div 
-                    className="flex"
-                    style={{ width: `${(totalItems / itemsVisible) * 100}%` }}
-                    animate={{ x: `${-currentIndex * (100 / totalItems)}%` }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          {/* Carousel Container */}
+          <div className="w-full overflow-hidden py-8 px-1">
+            <motion.div
+              className="flex"
+              style={{ width: `${(totalItems / itemsVisible) * 100}%` }}
+              animate={{ x: `${-currentIndex * (100 / totalItems)}%` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {projectsData.map((project, index) => (
+                <div
+                  key={index}
+                  className="px-4 flex-shrink-0"
+                  style={{ width: `${100 / totalItems}%` }}
                 >
-                    {projectsData.map((project, index) => (
-                        <div 
-                            key={index} 
-                            className="px-4 flex-shrink-0"
-                            style={{ width: `${100 / totalItems}%` }}
+                  <Card.Root className="h-full overflow-visible">
+                    <div className="flex flex-col h-full">
+                      <Card.Heading className="text-center">
+                        {project.title}
+                      </Card.Heading>
+                      {project.links.length > 0 ? (
+                        <a
+                          title={project.links[0].title}
+                          className="w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                          href={project.links[0].url}
+                          target="_blank"
+                          rel="noopener noreferrer"
                         >
-                             <Card.Root className="h-full overflow-visible">
-                                <div className="flex flex-col h-full">
-                                    <Card.Heading className="text-center">
-                                    {project.title}
-                                    </Card.Heading>
-                                    {project.links.length > 0 ? (
-                                        <a
-                                          title={project.links[0].title}
-                                          className="w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-                                          href={project.links[0].url}
-                                          target="_blank"
-                                          rel="noopener noreferrer"
-                                        >
-                                          <div
-                                            className={`projectImage ${project.imageClass} w-full h-full transition-transform duration-500 group-hover:scale-[1.04]`}
-                                            role="img"
-                                            aria-label={`${project.title} - Project Link`}
-                                          />
-                                        </a>
-                                    ) : (
-                                        <div className="w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md">
-                                          <div
-                                            className={`projectImage ${project.imageClass} w-full h-full transition-transform duration-500 group-hover:scale-[1.04]`}
-                                            role="img"
-                                            aria-label={`${project.title} - Project Showcase`}
-                                          />
-                                        </div>
-                                    )}
-                                    <p className="text-slate-600 text-sm mb-4">
-                                        {project.description}
-                                    </p>
-                                    <div className="flex flex-wrap gap-2 mt-auto">
-                                        {project.tags.map(tag => (
-                                            <Tag key={tag} value={tag} />
-                                        ))}
-                                    </div>
-                                </div>
-                            </Card.Root>
+                          <div
+                            className={`projectImage ${project.imageClass} w-full h-full transition-transform duration-500 group-hover:scale-[1.04]`}
+                            role="img"
+                            aria-label={`${project.title} - Project Link`}
+                          />
+                        </a>
+                      ) : (
+                        <div className="w-full h-48 md:h-56 mb-4 rounded-lg block overflow-hidden shadow-md">
+                          <div
+                            className={`projectImage ${project.imageClass} w-full h-full transition-transform duration-500 group-hover:scale-[1.04]`}
+                            role="img"
+                            aria-label={`${project.title} - Project Showcase`}
+                          />
                         </div>
-                    ))}
-                </motion.div>
-            </div>
+                      )}
+                      <p className="text-slate-600 text-sm mb-4">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-auto">
+                        {project.tags.map(tag => (
+                          <Tag key={tag} value={tag} />
+                        ))}
+                      </div>
+                    </div>
+                  </Card.Root>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
-             {/* Right Navigate Button */}
-             <AnimatePresence>
-             {currentIndex < maxIndex && (
-                 <motion.button 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    onClick={nextProject}
-                    className="absolute right-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all -mr-2 md:-mr-4"
-                    aria-label="Next Project"
-                >
-                    <ChevronRight size={32} />
-                </motion.button>
-             )}
-             </AnimatePresence>
+          {/* Right Navigate Button */}
+          <AnimatePresence>
+            {currentIndex < maxIndex && (
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                onClick={nextProject}
+                className="absolute right-0 z-20 p-2 rounded-full bg-white/80 hover:bg-white shadow-lg text-slate-800 hover:text-electric-blue transition-all -mr-2 md:-mr-4"
+                aria-label="Next Project"
+              >
+                <ChevronRight size={32} />
+              </motion.button>
+            )}
+          </AnimatePresence>
         </div>
 
 

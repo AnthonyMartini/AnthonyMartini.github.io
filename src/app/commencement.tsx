@@ -43,7 +43,7 @@ const AMBER = "251, 191, 36";
 
 // Part 1: indices 0–13, Part 2: indices 14–29
 const QUOTE_WORDS: QuoteWord[] = [
-  ...["“Engineering", "is", "not", "just", "about", "following", "steps", "to", "get", "an", "answer", "on", "a", "test."].map(
+  ...["Engineering", "is", "not", "just", "about", "following", "steps", "to", "get", "an", "answer", "on", "a", "test."].map(
     (t) => ({ t, cls: "text-slate-300" })
   ),
   ...["Engineering", "is", "about", "analyzing", "a", "problem"].map((t) => ({
@@ -52,7 +52,7 @@ const QUOTE_WORDS: QuoteWord[] = [
     glow: EMERALD,
   })),
   { t: "and", cls: "text-slate-300" },
-  ...["using", "what", "is", "available", "to", "come", "to", "a", "solution.”"].map((t) => ({
+  ...["using", "what", "is", "available", "to", "come", "to", "a", "solution."].map((t) => ({
     t,
     cls: "text-amber-300 font-semibold not-italic",
     glow: AMBER,
@@ -167,18 +167,9 @@ const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLEle
             transition: "opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1)",
           }}
         >
-          <SectionTitle dark eyebrow="00 / commencement" className="mb-4">
-            The Speech_
+          <SectionTitle dark className="mb-4">
+            The Speech
           </SectionTitle>
-          <div className="flex justify-center mb-14">
-            <span className="inline-flex items-center gap-2 font-mono text-xs text-slate-400 px-4 py-1.5 rounded-full bg-white/5 border border-white/10">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
-              </span>
-              USF 138th Commencement &middot; May 2026 &middot; Tampa, FL
-            </span>
-          </div>
         </div>
 
         {/* ── Quote: words light up as you scroll ── */}
@@ -191,14 +182,15 @@ const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLEle
             &ldquo;
           </span>
 
-          <blockquote className="relative text-2xl md:text-3xl lg:text-4xl font-medium italic leading-relaxed font-sans">
+          <blockquote className="relative text-xl md:text-3xl lg:text-4xl font-medium italic leading-relaxed font-sans">
             {renderWords(0, QUOTE_PART_1_END)}
           </blockquote>
 
-          <blockquote className="relative text-2xl md:text-3xl lg:text-4xl font-medium italic leading-relaxed font-sans mt-12 md:mt-14">
+          <blockquote className="relative text-xl md:text-3xl lg:text-4xl font-medium italic leading-relaxed font-sans mt-12 md:mt-14">
             {renderWords(QUOTE_PART_1_END, QUOTE_WORDS.length)}
           </blockquote>
         </div>
+
 
         {/* ── Image + description row ── */}
         <div
@@ -265,12 +257,11 @@ const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLEle
                 with AI, but to use it to solve the problems that come next.
               </p>
 
+              {/* Date and place */}
               <div className="flex flex-wrap gap-2 pt-1">
-                {["College of Engineering", "Bellini College of AI, Cybersecurity & Computing"].map((chip) => (
-                  <span key={chip} className="font-mono text-xs text-slate-300 px-3 py-1 rounded-full bg-white/5 border border-white/10">
-                    {chip}
-                  </span>
-                ))}
+                <span className="font-mono text-xs text-slate-300 px-3 py-1 rounded-full bg-white/5 border border-white/10">
+                  May 2026 - Tampa, Florida
+                </span>
               </div>
 
               <div className="pt-2">
@@ -280,7 +271,7 @@ const Commencement = forwardRef((props, forwardedRef: React.ForwardedRef<HTMLEle
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-all duration-200"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg>
                   Watch Speech on YouTube
                 </a>
               </div>
