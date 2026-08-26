@@ -25,32 +25,34 @@ const ExpandablePGCard = () => {
 
   return (
     <Card.Root logoClass="PG" className="transition-all duration-500">
-      <Card.Heading>Software Engineering Intern</Card.Heading>
+      <Card.Heading>Software Engineer</Card.Heading>
       <div className="flex w-full flex-row flex-wrap text-slate-600">
         <div className="flex-1 pl-2 min-w-[250px] pb-4">
           <p className="font-bold text-slate-800">Procter & Gamble</p>
           <p>Cincinnati, Ohio</p>
           <p className="text-electric-blue mt-2 font-mono text-sm">
-            Summers 2023, 2024, 2025
+            Jul 2025 - Present
           </p>
         </div>
 
         <div className="flex-1 pl-2 min-w-[250px]">
           <div className="mb-4">
             <p className="text-sm leading-relaxed">
-              Spearheaded development of scalable web applications and automation tools across three internships, directly impacting business efficiency and user experience.
+              I&apos;ve had a long journey with P&amp;G, starting in their high
+              school program and continuing through college. I&apos;ve been
+              across orgs, teams, and projects, gaining a wide range of
+              experience in software engineering and project development.
             </p>
           </div>
         </div>
       </div>
 
-      {/* Full Width expandable section */}
       <div className="w-full mt-2">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="flex items-center gap-2 text-sm font-semibold text-electric-blue hover:text-blue-600 transition-colors mb-4 group pl-2"
         >
-          {isOpen ? "Hide Breakdown" : "View Breakdown"}
+          {isOpen ? "Hide Timeline" : "View Timeline"}
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3 }}
@@ -69,41 +71,66 @@ const ExpandablePGCard = () => {
               className="overflow-hidden w-full"
             >
               <div className="space-y-6 border-l-2 border-electric-blue/20 pl-6 mb-6 ml-2">
-                {/* Summer 2025 */}
                 <div>
-                  <p className="text-sm font-bold text-slate-700 mb-2">Summer 2025</p>
+                  <p className="text-sm font-bold text-slate-700 mb-2">
+                    Current Role - Software Engineer
+                  </p>
                   <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600">
                     <li>
-                      Deployed a real-time collaboration service using <span className="text-electric-blue font-semibold">WebSockets</span> for an internal campaign management application.
+                      Creating automations in the networking space to improve
+                      efficiency and reduce manual work.
                     </li>
                     <li>
-                      Enhanced an existing commenting system by implementing user tagging functionality, enabling user search and email notifications.
+                      Supporting internal systems that improve visibility and
+                      help teams respond faster to issues.
                     </li>
                   </ul>
                 </div>
 
-                {/* Summer 2024 */}
                 <div>
-                  <p className="text-sm font-bold text-slate-700 mb-2">Summer 2024</p>
+                  <p className="text-sm font-bold text-slate-700 mb-2">
+                    Summer 2025 - SWE Intern
+                  </p>
                   <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600">
                     <li>
-                      Built a documentation platform to showcase examples of <span className="text-electric-blue font-semibold">25</span> components in an internal React component library.
+                      Built a real-time collaboration feature for an internal
+                      app using WebSockets.
                     </li>
                     <li>
-                      Implemented <span className="text-electric-blue font-semibold">Playwright</span> tests into GitHub CI/CD pipeline, eliminating over <span className="text-electric-blue font-semibold">40</span> accessibility errors.
+                      Improved a commenting system with tagging and
+                      notifications.
                     </li>
                   </ul>
                 </div>
 
-                {/* Summer 2023 */}
                 <div>
-                  <p className="text-sm font-bold text-slate-700 mb-2">Summer 2023</p>
+                  <p className="text-sm font-bold text-slate-700 mb-2">
+                    Summer 2024 - SWE Intern
+                  </p>
                   <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600">
                     <li>
-                      Developed a Python-based automation using <span className="text-electric-blue font-semibold">Selenium</span> to extract, transform, and organize invoice data.
+                      Created a documentation site for an internal React
+                      component library and shared examples across the team.
                     </li>
                     <li>
-                      Managed and developed new and existing projects in the Microsoft Power Platform.
+                      Added Playwright coverage to catch accessibility issues in
+                      CI before they shipped.
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <p className="text-sm font-bold text-slate-700 mb-2">
+                    Summer 2023 - SWE Intern
+                  </p>
+                  <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600">
+                    <li>
+                      Built a Python automation to organize invoice data and
+                      make a manual process much faster.
+                    </li>
+                    <li>
+                      Worked on Microsoft Power Platform projects and internal
+                      business tools.
                     </li>
                   </ul>
                 </div>
@@ -113,14 +140,12 @@ const ExpandablePGCard = () => {
         </AnimatePresence>
 
         <div className="w-full mt-4 flex flex-row gap-2 flex-wrap pl-2">
+          <Tag value="Network Automation" />
           <Tag value="React" />
-          <Tag value="WebSockets" />
-          <Tag value="Playwright" />
-          <Tag value="CI/CD" />
-          <Tag value="Accessibility" />
           <Tag value="Python" />
-          <Tag value="Selenium" />
+          <Tag value="Playwright" />
           <Tag value="Power Platform" />
+          <Tag value="Automation" />
         </div>
       </div>
     </Card.Root>
@@ -145,9 +170,6 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
       >
         {/* Main Flexbox Container - 2 columns: (Education + Achievements) and Experience */}
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
-
-
-
           {/* Left Column: Work Experience */}
           <div className="flex-1 min-w-[300px]">
             <SectionTitle>Experience</SectionTitle>
@@ -155,37 +177,6 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
             <div className="space-y-8">
               {/* P&G Consolidated Expandable */}
               <ExpandablePGCard />
-
-              {/* Intertape Polymer Group */}
-              <Card.Root logoClass="IPG">
-                <Card.Heading>Power Platform Developer</Card.Heading>
-                <div className="flex w-full flex-row flex-wrap text-slate-600">
-                  <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <p className="font-bold text-slate-800">Intertape Polymer Group</p>
-                    <p className="text-sm">Part-Time</p>
-                    <p className="text-electric-blue mt-2 font-mono text-sm">
-                      Nov 2023 - <span className="text-pink-500 ">Present</span>
-                    </p>
-                  </div>
-                  <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <ul className="list-disc pl-5 space-y-2 text-sm">
-                      <li>
-                        Refactored and added new functionality to a warehouse order application, built with React and fastapi.
-                      </li>
-                      <li>
-                        Designed, developed, and maintained <span className="text-electric-blue font-semibold">7+</span> production Power Apps and Power Automate workflows.
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="w-full mt-4 flex flex-row gap-2 flex-wrap">
-                    <Tag value="Power Apps" />
-                    <Tag value="Power Automate" />
-                    <Tag value="React" />
-                    <Tag value="SQL" />
-                    <Tag value="Dataverse" />
-                  </div>
-                </div>
-              </Card.Root>
 
               {/* Currently Building - Velocity Canvas */}
               <motion.div
@@ -212,12 +203,16 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-teal-400"></span>
                           </span>
-                          <span className="text-xs font-bold uppercase tracking-widest text-teal-300 font-mono">Currently Building</span>
+                          <span className="text-xs font-bold uppercase tracking-widest text-teal-300 font-mono">
+                            Currently Building
+                          </span>
                         </div>
                         <h3 className="text-lg font-bold font-terminal text-white leading-tight">
                           Velocity Canvas
                         </h3>
-                        <p className="text-slate-300/80 text-xs font-mono mt-0.5">AI-Powered Microsoft Power Apps Builder</p>
+                        <p className="text-slate-300/80 text-xs font-mono mt-0.5">
+                          AI-Powered Microsoft Power Apps Builder
+                        </p>
                       </div>
                       <a
                         href="https://velocitycanvas.com"
@@ -225,13 +220,30 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
                         rel="noopener noreferrer"
                         className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-teal-400/20 hover:bg-teal-400/35 border border-teal-400/30 hover:border-teal-400/60 text-teal-300 hover:text-white text-xs font-semibold transition-all duration-200"
                       >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" y1="14" x2="21" y2="3" /></svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
                         velocitycanvas.com
                       </a>
                     </div>
 
                     <p className="text-sm text-slate-300/80 mt-4 leading-relaxed">
-                      An AI-driven Next.js application that converts natural-language prompts into functional Power Apps components and screens, with a custom compiler that outputs deployable Power Apps YAML.
+                      An AI-driven Next.js application that converts
+                      natural-language prompts into functional Power Apps
+                      components and screens, with a custom compiler that
+                      outputs deployable Power Apps YAML.
                     </p>
                   </div>
                 </div>
@@ -246,19 +258,28 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
               <SectionTitle>Education</SectionTitle>
 
               {/* Graduate */}
-              <Card.Root logoClass="USF" className="mb-8">
+              <Card.Root
+                logoClass="USF"
+                className="mb-8 border-2 border-amber-400/90 bg-gradient-to-br from-amber-50/80 via-white/90 to-amber-50/70 shadow-[0_0_0_2px_rgba(251,191,36,0.25),0_10px_25px_rgba(251,191,36,0.12)]"
+              >
                 <Card.Heading>University of South Florida</Card.Heading>
                 <div className="flex w-full flex-row flex-wrap text-slate-600">
                   <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <p className="font-bold text-slate-800">M.S. in Artificial Intelligence</p>
-                    <p className="text-sm">Bellini College of AI, Cybersecurity, and Computing</p>
+                    <p className="font-bold text-slate-800">
+                      M.S. in Artificial Intelligence
+                    </p>
+                    <p className="text-sm">
+                      Bellini College of AI, Cybersecurity, and Computing
+                    </p>
                     <p className="text-electric-blue mt-2 font-mono text-sm">
-                      Starting: Fall 2026
+                      Currently Enrolled
                     </p>
                   </div>
                   <div className="flex-1 pl-2 min-w-[250px] pb-4">
                     <p className="text-sm leading-relaxed">
-                      Continuing my passion for AI and machine learning in a dedicated graduate program, deepening expertise in cutting-edge AI research and applications.
+                      Continuing my passion for AI and machine learning in a
+                      dedicated graduate program, deepening expertise in
+                      cutting-edge AI research and applications.
                     </p>
                   </div>
                 </div>
@@ -269,18 +290,24 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
                 <Card.Heading>University of South Florida</Card.Heading>
                 <div className="flex w-full flex-row flex-wrap text-slate-600">
                   <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <p className="font-bold text-slate-800">B.S. in Computer Engineering</p>
-                    <p className="text-sm">Minor in Mathematics, Honors College</p>
+                    <p className="font-bold text-slate-800">
+                      B.S. in Computer Engineering
+                    </p>
+                    <p className="text-sm">College of Engineering</p>
+                    <p className="text-sm">Honors College</p>
                     <p className="text-electric-blue mt-2 font-mono text-sm">
                       Graduated: May 2026
                     </p>
                     <p className="text-sm mt-1 font-semibold">GPA: 4.0/4.0</p>
                   </div>
                   <div className="flex-1 pl-2 min-w-[250px] pb-4">
-                    <p className="text-sm font-semibold mb-2">Relevant Coursework:</p>
+                    <p className="text-sm font-semibold mb-2">
+                      Relevant Coursework:
+                    </p>
                     <p className="text-sm leading-relaxed">
-                      Natural Language Processing, Deep Reinforcement Learning, HW Accelerators for ML,
-                      AI and Analytics, Analysis of Algorithms, Differential Equations, Graph Theory.
+                      Natural Language Processing, Deep Reinforcement Learning,
+                      HW Accelerators for ML, AI and Analytics, Analysis of
+                      Algorithms, Differential Equations, Graph Theory.
                     </p>
                   </div>
                 </div>
@@ -357,17 +384,42 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
               {/* Skills */}
               <div className="space-y-6">
                 <div className="glass-panel p-4 rounded-xl bg-white/60">
-                  <h3 className="text-base font-bold font-terminal text-slate-800 mb-3">Languages</h3>
+                  <h3 className="text-base font-bold font-terminal text-slate-800 mb-3">
+                    Languages
+                  </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Python", "TypeScript", "C++", "C", "C#", "Swift", "Verilog", "RISC-V Assembly"].map(skill => (
+                    {[
+                      "Python",
+                      "TypeScript",
+                      "C++",
+                      "C",
+                      "C#",
+                      "Swift",
+                      "Verilog",
+                      "RISC-V Assembly",
+                    ].map((skill) => (
                       <Tag key={skill} value={skill} />
                     ))}
                   </div>
                 </div>
                 <div className="glass-panel p-4 rounded-xl bg-white/60">
-                  <h3 className="text-base font-bold font-terminal text-slate-800 mb-3">Tools & Frameworks</h3>
+                  <h3 className="text-base font-bold font-terminal text-slate-800 mb-3">
+                    Tools & Frameworks
+                  </h3>
                   <div className="flex flex-wrap gap-2">
-                    {["PyTorch", "AWS", "React", "Tailwind", "FastAPI", "WebSockets", "Numpy", "Git", "Postman", "Jira", "Power Apps"].map(skill => (
+                    {[
+                      "PyTorch",
+                      "AWS",
+                      "React",
+                      "Tailwind",
+                      "FastAPI",
+                      "WebSockets",
+                      "Numpy",
+                      "Git",
+                      "Postman",
+                      "Jira",
+                      "Power Apps",
+                    ].map((skill) => (
                       <Tag key={skill} value={skill} />
                     ))}
                   </div>
@@ -375,11 +427,9 @@ const Resume = forwardRef((props, ref: LegacyRef<HTMLElement>) => {
               </div>
             </div>
           </div>
-
         </div>
       </motion.div>
     </section>
-
   );
 });
 Resume.displayName = "Resume";

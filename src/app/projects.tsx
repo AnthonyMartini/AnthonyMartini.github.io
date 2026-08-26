@@ -40,52 +40,76 @@ const projectsData = [
   {
     title: "Poker Bot Using RL",
     imageClass: "pokerBot",
-    description: "Developed a recurrent Reinforcement Learning agent for No-Limit Texas Hold 'em. Combined a mathematical Equity Model and a human-behavior Imitation Model (pre-trained on 10M+ hands) to train an advanced LSTM network for decision making and dynamic bet sizing.",
+    description:
+      "Developed a recurrent Reinforcement Learning agent for No-Limit Texas Hold 'em. Combined a mathematical Equity Model and a human-behavior Imitation Model (pre-trained on 10M+ hands) to train an advanced LSTM network for decision making and dynamic bet sizing.",
     tags: ["Python", "PyTorch", "Reinforcement Learning", "LSTM", "PPO"],
-    links: [{ url: "/Poker_Bot_using_RL.pdf", title: "Project Report PDF" }]
+    links: [
+      { url: "/projects/Poker_Bot_using_RL.pdf", title: "Project Report PDF" },
+    ],
   },
   {
     title: "Pneumonia Detection CNN",
     imageClass: "xrays",
-    description: "Architected CNN models to detect pneumonia in pediatric chest X-rays, achieving ~91% accuracy. Optimized for both GPU and CPU environments.",
+    description:
+      "Architected CNN models to detect pneumonia in pediatric chest X-rays, achieving ~91% accuracy. Optimized for both GPU and CPU environments.",
     tags: ["Python", "CNN", "Deep Learning"],
-    links: []
+    links: [],
   },
   {
     title: "NLP Optimization: Vocabulary Reduction",
     imageClass: "nlpOptimization",
-    description: "Research paper on LLM vocabulary optimization. Reduced vocab by 13% using NLTK WordNet while improving accuracy to 87.57%.",
+    description:
+      "Research paper on LLM vocabulary optimization. Reduced vocab by 13% using NLTK WordNet while improving accuracy to 87.57%.",
     tags: ["Python", "PyTorch", "NLTK", "LLM"],
-    links: [{ url: "https://github.com/AnthonyMartini/TokenSynonymFilter", title: "NLP Optimization External Link" }]
+    links: [
+      {
+        url: "https://github.com/AnthonyMartini/TokenSynonymFilter",
+        title: "NLP Optimization External Link",
+      },
+    ],
   },
   {
     title: "RoBERTa Sexism Detection",
     imageClass: "roberta",
-    description: "Conducted performance analysis by fine-tuning a RoBERTa model for binary text classification, achieving 87% accuracy on online comment data.",
+    description:
+      "Conducted performance analysis by fine-tuning a RoBERTa model for binary text classification, achieving 87% accuracy on online comment data.",
     tags: ["RoBERTa", "NLP", "Transformers"],
-    links: []
+    links: [],
   },
   {
     title: "Next Step Tracker",
     imageClass: "nextStep",
-    description: "Personal Health Dashboard to log and visualize health metrics. Built using only React and AWS Free Tier tools (Lambda, API Gateway, Amplify).",
+    description:
+      "Personal Health Dashboard to log and visualize health metrics. Built using only React and AWS Free Tier tools (Lambda, API Gateway, Amplify).",
     tags: ["React", "AWS", "Serverless"],
-    links: [{ url: "https://github.com/AnthonyMartini/health-dash-fe", title: "Next Step Tracker External Link" }]
+    links: [
+      {
+        url: "https://github.com/AnthonyMartini/health-dash-fe",
+        title: "Next Step Tracker External Link",
+      },
+    ],
   },
   {
     title: "FPGA Audio Controller",
     imageClass: "fpga",
-    description: "Engineered an FPGA-based audio controller to record/replay voice messages. Integrated softcore processor in Vivado with PicoBlaze assembly.",
+    description:
+      "Engineered an FPGA-based audio controller to record/replay voice messages. Integrated softcore processor in Vivado with PicoBlaze assembly.",
     tags: ["Verilog", "Vivado", "Assembly"],
-    links: []
+    links: [],
   },
   {
     title: "RFID Garage Door Opener",
     imageClass: "garageOpener",
-    description: "Arduino-based opener with multi-user RFID authentication. Designed custom PCB and 3D-printed enclosure.",
+    description:
+      "Arduino-based opener with multi-user RFID authentication. Designed custom PCB and 3D-printed enclosure.",
     tags: ["C++", "Arduino", "PCB"],
-    links: [{ url: "https://github.com/AnthonyMartini/RFIDGarageOpener", title: "Garage Opener External Link" }]
-  }
+    links: [
+      {
+        url: "https://github.com/AnthonyMartini/RFIDGarageOpener",
+        title: "Garage Opener External Link",
+      },
+    ],
+  },
 ];
 
 const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
@@ -173,7 +197,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
             initial={{ left: 0 }}
             animate={{
               left: `${indicatorLeft}%`,
-              width: `${indicatorWidth}%`
+              width: `${indicatorWidth}%`,
             }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           />
@@ -242,7 +266,7 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-2 mt-auto">
-                        {project.tags.map(tag => (
+                        {project.tags.map((tag) => (
                           <Tag key={tag} value={tag} />
                         ))}
                       </div>
@@ -269,7 +293,6 @@ const Projects = forwardRef((props, ref: ForwardedRef<HTMLElement>) => {
             )}
           </AnimatePresence>
         </div>
-
 
         <div className="flex justify-center mt-16">
           <a
